@@ -5,7 +5,16 @@ class Settings(BaseSettings):
     database_url: str = "sqlite:///./database/app.db"
     debug: bool = True
 
-    model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8")
+    gigachat_auth_key: str = ""
+    gigachat_scope: str = "GIGACHAT_API_PERS"
+    gigachat_oauth_url: str = "https://ngw.devices.sberbank.ru:9443/api/v2/oauth"
+    gigachat_base_url: str = "https://gigachat.devices.sberbank.ru"
+    gigachat_model: str = "GigaChat-2"
+    gigachat_verify_ssl: bool = False
 
+    model_config = SettingsConfigDict(
+        env_file=".env",
+        env_file_encoding="utf-8"
+    )
 
 settings = Settings()
