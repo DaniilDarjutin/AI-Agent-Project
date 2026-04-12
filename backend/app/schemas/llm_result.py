@@ -1,3 +1,4 @@
+from datetime import date
 from typing import Optional
 from sqlmodel import SQLModel
 from app.utils.enums import TaskPriority, TaskStatus
@@ -7,7 +8,7 @@ class TaskChanges(SQLModel):
     new_description: Optional[str] = None
     new_status: Optional[TaskStatus] = None
     new_priority: Optional[TaskPriority] = None
-    new_due_date: Optional[str] = None
+    new_due_date: Optional[date] = None
 
 class TaskEntities(SQLModel):
     task_id: Optional[int] = None
@@ -15,7 +16,7 @@ class TaskEntities(SQLModel):
     description: Optional[str] = None
     status: Optional[TaskStatus] = None
     priority: Optional[TaskPriority] = None
-    due_date: Optional[str] = None
+    due_date: Optional[date] = None
     changes: Optional[TaskChanges] = None
 
 class LLMResult(SQLModel):

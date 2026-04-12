@@ -3,6 +3,7 @@ from sqlmodel import SQLModel
 from app.schemas.llm_result import TaskEntities
 
 class ChatRequest(SQLModel):
+    chat_id: str
     message: str
 
 class ChatResponse(SQLModel):
