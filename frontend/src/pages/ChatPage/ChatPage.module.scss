@@ -1,0 +1,45 @@
+.chatPage {
+  flex: 1;
+  height: 100%;
+  min-height: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 150px 0 45px 0;
+  gap: 20px;
+  overflow: hidden;
+}
+
+.messagesArea {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  max-width: 800px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  overscroll-behavior: contain;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.messagesArea::-webkit-scrollbar {
+  display: none;
+}
+
+.messagesList {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  padding: 12px 0;
+}
+
+.inputArea {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-shrink: 0;
+  padding-bottom: 8px;
+}

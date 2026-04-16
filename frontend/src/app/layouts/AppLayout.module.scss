@@ -1,0 +1,48 @@
+.page {
+  height: 100vh;
+  background: #ffffff;
+  padding: 0;
+  overflow: hidden;
+}
+
+.shell {
+  position: relative;
+  height: 100%;
+  background: #ececec;
+  overflow: hidden;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.glowGreen {
+  position: absolute;
+  left: 30%;
+  bottom: -133px;
+  width: 414px;
+  height: 414px;
+  border-radius: 50%;
+  background: rgba(0, 255, 64, 1);
+  filter: blur(80px);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.glowBlue {
+  position: absolute;
+  right: 30%;
+  bottom: 20px;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: rgba(0, 212, 255, 1);
+  filter: blur(80px);
+  z-index: 1;
+  pointer-events: none;
+}

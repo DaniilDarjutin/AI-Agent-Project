@@ -1,0 +1,48 @@
+.wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+}
+
+.input {
+    padding: 14px 48px 14px 10px;
+    border: 1px solid rgba(0, 0, 0, 1);
+    border-radius: 13px;
+    min-width: 800px;
+    font-family: 'Roboto Mono', 'Courier New', monospace;
+    font-size: 14px;
+    outline: none;
+}
+
+.input:focus {
+    border-color: rgba(0, 212, 255, 1);
+    transition: 0.3s ease;
+}
+
+.input:hover {
+    border-color: rgba(0, 212, 255, 1);
+    transition: 0.3s ease;
+}
+
+.input::placeholder {
+    color: rgba(86, 99, 126, 1);
+    font-weight: normal;
+    font-size: 14px;
+    font-family: 'Roboto Mono', 'Courier New', monospace;
+}
+
+.sendButton {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 26px;
+    height: 26px;
+    padding: 5px 7px;
+    background-color: rgba(28, 28, 31, 1);
+    color: white;
+    border: 0.5px solid rgba(0, 212, 255, 1);
+    border-radius: 50%;
+    cursor: pointer;
+    font-family: 'Roboto Mono', 'Courier New', monospace;
+}

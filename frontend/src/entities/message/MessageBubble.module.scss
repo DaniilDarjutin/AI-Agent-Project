@@ -1,0 +1,44 @@
+.messageRow {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-width: 360px;
+}
+
+.aiRow {
+  align-self: flex-start;
+}
+
+.userRow {
+  align-self: flex-end;
+  align-items: flex-end;
+}
+
+.messageMeta {
+  font-size: 12px;
+  color: #2b1d28;
+  opacity: 0.85;
+}
+
+.bubble {
+  padding: 16px 18px;
+  border-radius: 18px;
+  font-size: 14px;
+  line-height: 1.45;
+  font-family: 'Roboto Mono', 'Courier New', monospace;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.aiBubble {
+  background: #ffffff;
+  color: #1b1b1b;
+  border-top-left-radius: 8px;
+}
+
+.userBubble {
+  background: #ffffff;
+  color: #1b1b1b;
+  border-top-right-radius: 8px;
+}
