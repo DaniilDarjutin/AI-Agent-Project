@@ -1,0 +1,38 @@
+.column {
+  border-radius: 13px;
+  overflow: hidden;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+}
+
+.todo {
+  background: rgba(255, 200, 89);
+}
+
+.inProgress {
+  background: rgba(0, 212, 255);
+}
+
+.done {
+  background: rgba(0, 255, 64);
+}
+
+.header {
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 500;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.5);
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.6);
+}

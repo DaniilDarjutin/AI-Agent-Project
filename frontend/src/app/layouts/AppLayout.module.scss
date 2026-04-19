@@ -8,7 +8,7 @@
 .shell {
   position: relative;
   height: 100%;
-  background: #ececec;
+  background: #ffffff;
   overflow: hidden;
 }
 
@@ -21,28 +21,42 @@
   flex-direction: column;
 }
 
-.glowGreen {
+.glowGreen, .glowBlue {
   position: absolute;
-  left: 30%;
-  bottom: -133px;
-  width: 414px;
-  height: 414px;
   border-radius: 50%;
-  background: rgba(0, 255, 64, 1);
   filter: blur(80px);
   z-index: 2;
   pointer-events: none;
 }
 
-.glowBlue {
-  position: absolute;
+.chatLayout .glowGreen {
+  left: 30%;
+  bottom: -133px;
+  width: 414px;
+  height: 414px;
+  background: rgba(0, 255, 64, 1);
+}
+
+.chatLayout .glowBlue {
   right: 30%;
-  bottom: 20px;
-  width: 280px;
-  height: 280px;
-  border-radius: 50%;
+  bottom: -133px;
+  width: 414px;
+  height: 414px;
   background: rgba(0, 212, 255, 1);
-  filter: blur(80px);
-  z-index: 1;
-  pointer-events: none;
+}
+
+.tasksLayout .glowGreen {
+  left: -50px;
+  top: -25px;
+  width: 244px;
+  height: 244px;
+  background: rgba(0, 255, 64, 1);
+}
+
+.tasksLayout .glowBlue {
+  right: -60px;
+  bottom: -75px;
+  width: 210px;
+  height: 210px;
+  background: rgba(0, 212, 255, 1);
 }

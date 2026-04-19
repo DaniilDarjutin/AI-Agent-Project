@@ -1,0 +1,26 @@
+.card {
+  background: #FFFFFF;
+  border-radius: 3px;
+  padding: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: normal;
+  margin-bottom: 8px;
+  color: #000000;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.date {
+  font-size: 10px;
+  color: #1b1b1b;
+}
