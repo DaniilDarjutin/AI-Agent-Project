@@ -1,33 +1,41 @@
-import KanbanColumn from '../../entities/task/ui/KanbanColumn/KanbanColumn'
-import styles from './KanbanBoard.module.scss'
+import KanbanColumn from "../../entities/task/ui/KanbanColumn/KanbanColumn";
+import styles from "./KanbanBoard.module.scss";
+import type { Task } from "../../entities/task/task.api";
 
-type Task = {
-  id: number
-  title: string
-  priority: 'high' | 'medium' | 'low'
-  dueDate?: string
-}
 
 type KanbanBoardProps = {
-  todoTasks: Task[]
-  inProgressTasks: Task[]
-  doneTasks: Task[]
-}
+  todoTasks: Task[];
+  inProgressTasks: Task[];
+  doneTasks: Task[];
+  onTaskClick: (task: Task) => void;
+};
 
 export default function KanbanBoard({
   todoTasks,
   inProgressTasks,
   doneTasks,
+  onTaskClick,
 }: KanbanBoardProps) {
   return (
     <div className={styles.board}>
-      <KanbanColumn title="To Do" tasks={todoTasks} variant="todo" />
+      <KanbanColumn
+        title="To Do"
+        tasks={todoTasks}
+        variant="todo"
+        onTaskClick={onTaskClick}
+      />
       <KanbanColumn
         title="In Progress"
         tasks={inProgressTasks}
         variant="inProgress"
+        onTaskClick={onTaskClick}
       />
-      <KanbanColumn title="Done" tasks={doneTasks} variant="done" />
+      <KanbanColumn
+        title="Done"
+        tasks={doneTasks}
+        variant="done"
+        onTaskClick={onTaskClick}
+      />
     </div>
-  )
+  );
 }

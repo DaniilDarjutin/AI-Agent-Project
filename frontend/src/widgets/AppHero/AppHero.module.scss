@@ -9,6 +9,7 @@
   width: 36px;
   height: 36px;
   object-fit: contain;
+  cursor: pointer;
 }
 
 .title {
@@ -16,4 +17,41 @@
   font-weight: normal;
   flood-color: rgba(22, 2, 17, 1);
   text-align: center;
+}
+
+.switcher {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(8px);
+}
+
+.switchButton {
+  min-width: 110px;
+  height: 42px;
+  border: none;
+  border-radius: 12px;
+  background: transparent;
+  cursor: pointer;
+  font-family: 'Roboto Mono', 'Courier New', monospace;
+  font-size: 16px;
+  font-weight: 600;
+  color: #2b1d28;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.2s ease;
+}
+
+.switchButton:hover {
+  transform: translateY(-1px);
+}
+
+.active {
+  background: #ffffff;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
 }

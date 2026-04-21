@@ -1,0 +1,56 @@
+.statusBar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.statusSegment {
+    min-width: 101px;
+    height: 46px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Roboto Mono', 'Courier New', monospace;
+    font-size: 20px;
+    font-weight: normal;
+    color: #111;
+    transition: 0.2s ease all;
+    padding: 10px 20px;
+}
+
+.todo {
+    background: #FFC859;
+
+    &.dimmed {
+        background: rgba(255, 200, 89, 0.2);
+
+        &:hover {
+            background: rgba(255, 200, 89, 0.7);
+        }
+    }
+}
+
+.in_progress {
+    background: #00D4FF;
+
+    &.dimmed {
+        background: rgba(0, 212, 255, 0.2);
+
+        &:hover {
+            background: rgba(0, 212, 255, 0.7);
+        }
+    }
+}
+
+.done {
+    background: #00FF40;
+
+    &.dimmed {
+        background: rgba(0, 255, 64, 0.2);
+
+        &:hover {
+            background: rgba(0, 255, 64, 0.7);
+        }
+    }
+}

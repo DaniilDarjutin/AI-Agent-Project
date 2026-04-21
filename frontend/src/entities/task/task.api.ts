@@ -14,6 +14,14 @@ export type Task = {
   updated_at?: string
 }
 
+export type UpdateTaskPayload = {
+  title: string
+  description: string | null
+  status: TaskStatus
+  priority: TaskPriority
+  due_date: string | null
+}
+
 const api = axios.create({
   baseURL: 'http://127.0.0.1:8000',
   headers: {
@@ -24,4 +32,16 @@ const api = axios.create({
 export const getTasks = async (): Promise<Task[]> => {
   const response = await api.get<Task[]>('/tasks/')
   return response.data
+}
+
+export const updateTask = async (
+  taskId: number,
+  payload: UpdateTaskPayload,
+): Promise<Task> => {
+  const response = await api.patch<Task>(`/tasks/${taskId}`, payload)
+  return response.data
+}
+
+export const deleteTask = async (taskId: number): Promise<void> => {
+  await api.delete(`/tasks/${taskId}`)
 }

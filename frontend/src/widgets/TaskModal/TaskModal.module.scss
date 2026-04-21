@@ -1,0 +1,210 @@
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(134, 134, 134, 0.6);
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    z-index: 100;
+    overflow: auto;
+    scrollbar-width: none;;
+}
+
+.modal {
+    width: 100%;
+    max-width: 615px;
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
+}
+
+.header {
+    min-height: 70px;
+    padding: 20px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(223, 223, 223, 1);
+}
+
+.title {
+    font-family: 'Roboto Mono', 'Courier New', monospace;
+    font-size: 23px;
+    font-weight: 500;
+    color: #1f1f1f;
+}
+
+.closeButton {
+    border: none;
+    background: transparent;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 38px;
+    line-height: 1;
+    color: #5f5f5f;
+    transition:
+        transform 0.15s ease,
+        color 0.2s ease;
+    line-height: 1;
+}
+
+.closeButton:hover {
+    transform: scale(1.05);
+    color: #1f1f1f;
+}
+
+.content {
+    padding: 20px 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.statusRow {
+    display: flex;
+    justify-content: center;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.fieldHalf {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.bottomRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+.label {
+    font-family: 'Roboto Mono', 'Courier New', monospace;
+    font-size: 20px;
+    font-weight: normal;
+    color: #000000;
+}
+
+.input,
+.textarea,
+.select {
+    width: 100%;
+    border: 1px solid rgba(172, 172, 172, 1);
+    border-radius: 10px;
+    font-family: 'Roboto Mono', 'Courier New', monospace;
+    font-size: 18px;
+    color: #000000;
+    outline: none;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
+    padding: 10px 15px;
+    resize: none;
+
+    &::placeholder {
+        color: rgba(86, 99, 126, 1);
+        font-weight: normal;
+        font-size: 18px;
+        font-family: 'Roboto Mono', 'Courier New', monospace;
+    }
+}
+
+.textarea {
+    min-height: 200px;
+}
+
+.input:focus,
+.textarea:focus,
+.select:focus {
+    border-color: rgba(0, 212, 255, 0.9);
+    box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.12);
+    background: rgba(255, 255, 255, 0.55);
+}
+
+.input:hover,
+.textarea:hover,
+.select:hover {
+    border-color: rgba(0, 212, 255, 0.9);
+    box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.12);
+    background: rgba(255, 255, 255, 0.55);
+}
+
+.selectWrapper {
+  position: relative;
+}
+
+.select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+}
+
+.selectArrow {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-75%);
+  pointer-events: none;
+  font-size: 24px;
+  line-height: 1;
+  color: #1f1f1f;
+}
+
+.footer {
+    padding: 20px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    border-top: 1px solid rgba(223, 223, 223, 1);
+}
+
+.deleteButton,
+.saveButton {
+    border-radius: 10px;
+    font-family: 'Roboto Mono', 'Courier New', monospace;
+    font-size: 18px;
+    cursor: pointer;
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
+    padding: 10px 20px;
+}
+
+.deleteButton:hover,
+.saveButton:hover {
+    transform: translateY(-1px);
+}
+
+.deleteButton {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.14);
+    color: #1f1f1f;
+}
+
+.deleteButton:hover {
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+}
+
+.saveButton {
+    border: none;
+    background: #11b66e;
+    color: #ffffff;
+}
+
+.saveButton:hover {
+    background: #0ea261;
+    box-shadow: 0 10px 20px rgba(17, 182, 110, 0.25);
+}

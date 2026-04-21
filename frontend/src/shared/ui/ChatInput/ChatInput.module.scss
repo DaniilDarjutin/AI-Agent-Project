@@ -6,7 +6,7 @@
 
 .input {
     padding: 14px 48px 14px 10px;
-    border: 1px solid rgba(0, 0, 0, 1);
+    border: 1px solid rgba(172, 172, 172, 1);
     border-radius: 13px;
     min-width: 800px;
     font-family: 'Roboto Mono', 'Courier New', monospace;
@@ -15,12 +15,14 @@
 }
 
 .input:focus {
-    border-color: rgba(0, 212, 255, 1);
+    border-color: rgba(0, 212, 255, 0.9);
+    box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.12);
     transition: 0.3s ease;
 }
 
 .input:hover {
-    border-color: rgba(0, 212, 255, 1);
+    border-color: rgba(0, 212, 255, 0.9);
+    box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.12);
     transition: 0.3s ease;
 }
 
@@ -45,4 +47,9 @@
     border-radius: 50%;
     cursor: pointer;
     font-family: 'Roboto Mono', 'Courier New', monospace;
+}
+
+.sendIcon {
+    width: 100%;
+    height: 100%;
 }

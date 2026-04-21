@@ -1,23 +1,19 @@
-import TaskCard from '../TaskCard/TaskCard'
-import styles from './KanbanColumn.module.scss'
-
-type Task = {
-  id: number
-  title: string
-  priority: 'high' | 'medium' | 'low'
-  due_date?: string
-}
+import TaskCard from "../TaskCard/TaskCard";
+import styles from "./KanbanColumn.module.scss";
+import type { Task } from "../../task.api";
 
 type KanbanColumnProps = {
-  title: string
-  tasks: Task[]
-  variant: 'todo' | 'inProgress' | 'done'
-}
+  title: string;
+  tasks: Task[];
+  variant: "todo" | "inProgress" | "done";
+  onTaskClick: (task: Task) => void;
+};
 
 export default function KanbanColumn({
   title,
   tasks,
   variant,
+  onTaskClick,
 }: KanbanColumnProps) {
   return (
     <div className={`${styles.column} ${styles[variant]}`}>
@@ -29,10 +25,11 @@ export default function KanbanColumn({
             key={task.id}
             title={task.title}
             priority={task.priority}
-            dueDate={task.due_date}
+            dueDate={task.due_date ?? undefined}
+            onClick={() => onTaskClick(task)}
           />
         ))}
       </div>
     </div>
-  )
+  );
 }
