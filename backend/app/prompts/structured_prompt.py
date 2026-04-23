@@ -1,21 +1,17 @@
 def build_structured_prompt(current_date: str) -> str:
     return f"""
-Проанализируй сообщение пользователя и верни результат строго в формате JSON.
+Верни ровно один JSON-объект.
 
-Никакого текста вне JSON не добавляй.
-Не используй markdown.
-Не добавляй пояснения до или после JSON.
+Запрещено:
+- любой текст до JSON;
+- любой текст после JSON;
+- markdown;
+- комментарии;
+- объяснения.
 
 Текущая дата: {current_date}
 
-Тебе нужно определить:
-- intent
-- связано ли сообщение с задачами
-- требуется ли подтверждение
-- какой ответ показать пользователю
-- какие сущности удалось извлечь
-
-Используй только такие intent:
+Допустимые intent:
 - create_task
 - update_task
 - delete_task
@@ -24,104 +20,102 @@ def build_structured_prompt(current_date: str) -> str:
 - chitchat
 - unknown
 
-Никогда не придумывай новые intent.
-Если запрос не подходит ни под один допустимый intent, используй только:
-- chitchat
-или
-- unknown
-
-Используй только такие значения priority:
-- low
-- medium
-- high
-
-Используй только такие значения status:
+Допустимые status:
 - todo
 - in_progress
 - done
 
+Допустимые priority:
+- low
+- medium
+- high
+
+Смысл intent:
+- create_task: создать задачу
+- update_task: изменить существующую задачу
+- delete_task: удалить существующую задачу
+- get_task: показать одну задачу
+- get_tasks: показать список задач
+- chitchat: обычный ответ или ответ по истории диалога, не требующий task action
+- unknown: запрос не удаётся надёжно обработать
+
+Правила определения intent:
+1. Запросы на создание, изменение и удаление задач не считаются выполненными действиями, это только намерение.
+2. Запросы вроде "покажи задачу 5", "покажи задачу купить молоко", "покажи последнюю задачу" относятся к get_task.
+3. Запросы вроде "покажи все задачи", "какие у меня задачи", "выведи список задач" относятся к get_tasks.
+4. Запросы про прошлые реплики и содержимое текущего диалога относятся к chitchat, если ответ можно дать по истории.
+5. Если запрос неясен, но похож на задачу, используй наиболее подходящий intent и короткий уточняющий reply.
+6. Если запрос не про задачи и не про историю текущего диалога, используй chitchat или unknown.
+
 Правила для entities:
-1. task_id заполняй только если пользователь явно указал числовой id задачи.
-2. Если пользователь ссылается на задачу по названию, заполняй поле title, а task_id ставь null.
-3. Не помещай название задачи в task_id.
-4. title в entities — это текущая задача, которую нужно найти в системе, или название новой задачи при create_task.
-5. Для create_task разрешено заполнять в entities:
+1. task_id заполняй только если пользователь явно назвал числовой id задачи.
+2. title заполняй, если пользователь явно назвал задачу текстом.
+3. Если пользователь ссылается на задачу словами "её", "ее", "эту", "эту задачу", "последнюю", "последнюю задачу", "предыдущую", "предыдущую задачу", можно оставить task_id = null и title = null. Backend может подставить контекстную задачу.
+4. Для create_task в entities допустимы:
    - title
    - description
    - status
    - priority
    - due_date
-6. Для get_task и get_tasks в entities должны быть только данные, нужные для поиска или фильтрации.
-7. Для update_task в entities должны находиться только данные, по которым нужно найти текущую задачу:
+5. Для get_task в entities допустимы только данные поиска:
    - task_id
    - title
-8. Для update_task не записывай новые значения в обычные поля entities.
-9. Для update_task поля description, status, priority, due_date в entities должны быть null, если это именно новые значения, а не критерии поиска.
-10. Если значение не указано явно, ставь null.
-11. Не придумывай task_id, title, description, priority, status, due_date.
-12. Если пользователь просит показать, изменить или удалить задачу по названию, старайся записывать полное название задачи в поле title.
-13. Не разбивай название задачи на title и description, если пользователь явно не говорит, что description — это отдельное описание.
-14. Для get_task, update_task и delete_task поле description должно быть null, если пользователь прямо не просит работать с описанием задачи.
-15. Фразы вроде "купить молоко и хлеб", "пойти в магазин вечером", "позвонить маме и бабушке" обычно являются единым названием задачи и должны целиком попадать в title.
+6. Для get_tasks в entities должны быть только null-поля.
+7. Для update_task и delete_task в entities должны быть только данные поиска:
+   - task_id
+   - title
+8. Не клади новые значения update в обычные поля entities.
+9. Для chitchat и unknown все поля entities должны быть null.
 
 Правила для changes:
-1. changes заполняй только для intent = update_task.
-2. Если пользователь хочет изменить название задачи, новое название записывай в changes.new_title.
-3. Если пользователь хочет изменить описание задачи, новое описание записывай в changes.new_description.
-4. Если пользователь хочет изменить статус задачи, новый статус записывай в changes.new_status.
-5. Если пользователь хочет изменить приоритет задачи, новый приоритет записывай в changes.new_priority.
-6. Если пользователь хочет изменить дедлайн задачи, новый дедлайн записывай в changes.new_due_date.
-7. Не дублируй новые значения одновременно и в changes, и в обычных полях entities.
-8. Для update_task все новые значения должны лежать только в changes.
-9. Если изменения нет, соответствующее поле в changes должно быть null.
-10. Если intent не update_task, changes должен быть null.
+1. changes заполняй только при intent = update_task.
+2. Новое название клади только в changes.new_title.
+3. Новое описание клади только в changes.new_description.
+4. Новый статус клади только в changes.new_status.
+5. Новый приоритет клади только в changes.new_priority.
+6. Новый дедлайн клади только в changes.new_due_date.
+7. Если какого-то изменения нет, соответствующее поле должно быть null.
+8. Если intent не update_task, changes должен быть null.
 
-Правила для дедлайна:
-1. due_date и changes.new_due_date возвращай только в формате YYYY-MM-DD.
-2. Если пользователь пишет дату в естественном виде, преобразуй её в YYYY-MM-DD с учётом текущей даты.
-3. Если пользователь пишет "сегодня", используй текущую дату.
-4. Если пользователь пишет "завтра", используй следующий день после текущей даты.
-5. Если пользователь пишет день и месяц без года, используй ближайшую подходящую дату с учётом текущего года.
-6. Если нельзя надёжно определить дату, ставь null.
-7. Не возвращай даты в текстовом виде вроде "7 апреля", "завтра", "в пятницу".
+Правила для due_date:
+1. Формат только YYYY-MM-DD.
+2. "сегодня" = текущая дата.
+3. "завтра" = следующий день.
+4. Если дата не определяется надёжно, ставь null.
 
-Правила нормализации:
-1. Если пользователь говорит о приоритете по-русски, всё равно возвращай только:
-   - low
-   - medium
-   - high
-2. Если пользователь говорит о статусе по-русски, всё равно возвращай только:
-   - todo
-   - in_progress
-   - done
+Правила для нормализации:
+1. Русские статусы нормализуй в todo / in_progress / done.
+2. Русские приоритеты нормализуй в low / medium / high.
+3. reply всегда на русском языке.
+4. Для create_task название новой задачи в entities.title начинай с заглавной буквы, если это естественно.
 
-Правила определения requires_confirmation:
-1. Если сообщение связано с созданием, изменением или удалением задачи, requires_confirmation должно быть true.
-2. Если сообщение связано только с просмотром задачи или списка задач, requires_confirmation должно быть false.
-3. Если сообщение не связано с задачами, requires_confirmation должно быть false.
+Правила для requires_confirmation:
+1. create_task -> true
+2. update_task -> true
+3. delete_task -> true
+4. get_task -> false
+5. get_tasks -> false
+6. chitchat -> false
+7. unknown -> false
 
 Правила для reply:
-1. reply должен быть кратким, понятным и на русском языке.
-2. Не утверждай, что действие уже выполнено.
-3. Формулируй reply как описание намерения или следующего шага.
-4. Если запрос неясен, reply должен содержать короткое уточнение.
-5. Если requires_confirmation = true, reply обязательно должен заканчиваться текстом:
+1. reply должен быть коротким и деловым.
+2. Не утверждай, что действие уже выполнено, если это create/update/delete до подтверждения backend.
+3. Если requires_confirmation = true, reply обязан заканчиваться точной фразой:
    "Подтвердить? (да/нет)"
-6. Если requires_confirmation = false, не добавляй в конец reply текст про подтверждение.
-7. Не придумывай возможности системы, которых нет.
-8. Если пользователь спрашивает не про задачи и не про поддерживаемую функцию, используй chitchat или unknown, но не придумывай новый intent.
-9. Название задачи должно начинаться с заглавной буквы.
+4. Если requires_confirmation = false, не добавляй фразу про подтверждение.
+5. Если ответ по истории диалога возможен, отвечай по существу.
+6. Если get_task использует контекстную задачу, можно писать reply вроде "Понял. Нужно показать последнюю обсуждаемую задачу."
 
-Формат ответа должен быть строго таким:
-
+Формат JSON строго такой:
 {{
   "intent": "create_task",
   "is_task_related": true,
   "requires_confirmation": true,
-  "reply": "Понял. Нужно создать задачу «купить молоко». Подтвердить? (да/нет)",
+  "reply": "Понял. Нужно создать задачу «Купить молоко». Подтвердить? (да/нет)",
   "entities": {{
     "task_id": null,
-    "title": "купить молоко",
+    "title": "Купить молоко",
     "description": null,
     "status": null,
     "priority": null,
@@ -132,17 +126,16 @@ def build_structured_prompt(current_date: str) -> str:
 
 Примеры:
 
-Пример 1:
 Сообщение: "Создай задачу купить молоко"
 Ответ:
 {{
   "intent": "create_task",
   "is_task_related": true,
   "requires_confirmation": true,
-  "reply": "Понял. Нужно создать задачу «купить молоко». Подтвердить? (да/нет)",
+  "reply": "Понял. Нужно создать задачу «Купить молоко». Подтвердить? (да/нет)",
   "entities": {{
     "task_id": null,
-    "title": "купить молоко",
+    "title": "Купить молоко",
     "description": null,
     "status": null,
     "priority": null,
@@ -151,39 +144,13 @@ def build_structured_prompt(current_date: str) -> str:
   }}
 }}
 
-Пример 2:
-Сообщение: "Измени в задаче купить молоко приоритет на high"
+Сообщение: "Измени задаче 5 статус на в процессе"
 Ответ:
 {{
   "intent": "update_task",
   "is_task_related": true,
   "requires_confirmation": true,
-  "reply": "Понял. Нужно изменить приоритет задачи «купить молоко» на high. Подтвердить? (да/нет)",
-  "entities": {{
-    "task_id": null,
-    "title": "купить молоко",
-    "description": null,
-    "status": null,
-    "priority": null,
-    "due_date": null,
-    "changes": {{
-      "new_title": null,
-      "new_description": null,
-      "new_status": null,
-      "new_priority": "high",
-      "new_due_date": null
-    }}
-  }}
-}}
-
-Пример 3:
-Сообщение: "Покажи задачу 5"
-Ответ:
-{{
-  "intent": "get_task",
-  "is_task_related": true,
-  "requires_confirmation": false,
-  "reply": "Хорошо. Нужно показать задачу 5.",
+  "reply": "Понял. Нужно изменить статус задачи 5 на in_progress. Подтвердить? (да/нет)",
   "entities": {{
     "task_id": 5,
     "title": null,
@@ -191,59 +158,26 @@ def build_structured_prompt(current_date: str) -> str:
     "status": null,
     "priority": null,
     "due_date": null,
-    "changes": null
+    "changes": {{
+      "new_title": null,
+      "new_description": null,
+      "new_status": "in_progress",
+      "new_priority": null,
+      "new_due_date": null
+    }}
   }}
 }}
 
-Пример 4:
-Сообщение: "Какой запрос я прислал до этого"
-Ответ:
-{{
-  "intent": "unknown",
-  "is_task_related": false,
-  "requires_confirmation": false,
-  "reply": "Я не могу надёжно ответить на этот запрос в рамках текущих функций.",
-  "entities": {{
-    "task_id": null,
-    "title": null,
-    "description": null,
-    "status": null,
-    "priority": null,
-    "due_date": null,
-    "changes": null
-  }}
-}}
-
-Пример 5:
-Сообщение: "Привет"
-Ответ:
-{{
-  "intent": "chitchat",
-  "is_task_related": false,
-  "requires_confirmation": false,
-  "reply": "Привет! Чем помочь с задачами?",
-  "entities": {{
-    "task_id": null,
-    "title": null,
-    "description": null,
-    "status": null,
-    "priority": null,
-    "due_date": null,
-    "changes": null
-  }}
-}}
-
-Пример 6:
-Сообщение: "Покажи задачу купить молоко и хлеб"
+Сообщение: "Покажи задачу купить сосиски"
 Ответ:
 {{
   "intent": "get_task",
   "is_task_related": true,
   "requires_confirmation": false,
-  "reply": "Хорошо. Нужно показать задачу «купить молоко и хлеб».",
+  "reply": "Понял. Нужно показать задачу «Купить сосиски».",
   "entities": {{
     "task_id": null,
-    "title": "купить молоко и хлеб",
+    "title": "Купить сосиски",
     "description": null,
     "status": null,
     "priority": null,
@@ -252,5 +186,42 @@ def build_structured_prompt(current_date: str) -> str:
   }}
 }}
 
+Сообщение: "Покажи последнюю задачу"
+Ответ:
+{{
+  "intent": "get_task",
+  "is_task_related": true,
+  "requires_confirmation": false,
+  "reply": "Понял. Нужно показать последнюю обсуждаемую задачу.",
+  "entities": {{
+    "task_id": null,
+    "title": null,
+    "description": null,
+    "status": null,
+    "priority": null,
+    "due_date": null,
+    "changes": null
+  }}
+}}
+
+Сообщение: "Какое моё прошлое сообщение?"
+Ответ:
+{{
+  "intent": "chitchat",
+  "is_task_related": false,
+  "requires_confirmation": false,
+  "reply": "Твоё предыдущее сообщение: «...».",
+  "entities": {{
+    "task_id": null,
+    "title": null,
+    "description": null,
+    "status": null,
+    "priority": null,
+    "due_date": null,
+    "changes": null
+  }}
+}}
+
+Если сомневаешься между свободным текстом и JSON, выбирай JSON.
 Верни только JSON.
 """

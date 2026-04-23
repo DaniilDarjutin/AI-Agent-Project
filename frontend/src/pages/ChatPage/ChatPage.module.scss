@@ -37,6 +37,37 @@
   padding: 12px 0;
 }
 
+.chatToolbar {
+  width: 100%;
+  max-width: 820px;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.newChatButton {
+  min-width: 132px;
+  height: 42px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+  font-family: 'Roboto Mono', 'Courier New', monospace;
+  font-size: 15px;
+  color: #2b1d28;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.newChatButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+}
+
 .inputArea {
   width: 100%;
   display: flex;

@@ -17,7 +17,7 @@ class ChatStateService:
             return {"status": "missing"}
 
         if self._is_expired(chat_state.updated_at):
-            self.chat_state_repository.delete(session, chat_state)
+            self.chat_state_repository.clear_pending(session, chat_state)
             return {"status": "expired"}
 
         entities = None
@@ -65,7 +65,51 @@ class ChatStateService:
         if chat_state is None:
             return
 
-        self.chat_state_repository.delete(session, chat_state)
+        self.chat_state_repository.clear_pending(session, chat_state)
+
+    def get_task_context(self, session: Session, chat_id: str) -> dict[str, int | str | None]:
+        chat_state = self.chat_state_repository.get_by_chat_id(session, chat_id)
+
+        if chat_state is None:
+            return {
+                "last_task_id": None,
+                "last_task_title": None,
+            }
+
+        return {
+            "last_task_id": chat_state.last_task_id,
+            "last_task_title": chat_state.last_task_title,
+        }
+
+    def save_task_context(
+        self,
+        session: Session,
+        chat_id: str,
+        task_id: int | None,
+        task_title: str | None,
+    ):
+        chat_state = self.chat_state_repository.get_by_chat_id(session, chat_id)
+
+        if chat_state is None:
+            return self.chat_state_repository.create(
+                session=session,
+                chat_id=chat_id,
+                pending_action=None,
+                pending_entities_json=None,
+                awaiting_confirmation=False,
+                last_task_id=task_id,
+                last_task_title=task_title,
+            )
+
+        return self.chat_state_repository.update(
+            session=session,
+            chat_state=chat_state,
+            pending_action=chat_state.pending_action,
+            pending_entities_json=chat_state.pending_entities_json,
+            awaiting_confirmation=chat_state.awaiting_confirmation,
+            last_task_id=task_id,
+            last_task_title=task_title,
+        )
 
     def _is_expired(self, updated_at: datetime) -> bool:
         if updated_at.tzinfo is None:

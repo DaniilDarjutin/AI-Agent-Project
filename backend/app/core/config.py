@@ -1,8 +1,15 @@
+from pathlib import Path
+
 from pydantic_settings import BaseSettings, SettingsConfigDict
+
+
+BASE_DIR = Path(__file__).resolve().parents[3]
+DB_PATH = BASE_DIR / "database" / "app.db"
+
 
 class Settings(BaseSettings):
     app_name: str = "AI Task Tracker Backend"
-    database_url: str = "sqlite:///./database/app.db"
+    database_url: str = f"sqlite:///{DB_PATH}"
     debug: bool = True
 
     gigachat_auth_key: str = ""

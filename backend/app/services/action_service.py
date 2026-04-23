@@ -91,17 +91,18 @@ class ActionService:
 
         return None
 
-    def _delete_task(self, session: Session, entities: TaskEntities) -> bool:
+    def _delete_task(self, session: Session, entities: TaskEntities) -> Task | None:
         if entities.task_id is not None:
+            task = self.task_service.get_task_by_id(session, entities.task_id)
             self.task_service.delete_task(session, entities.task_id)
-            return True
+            return task
 
         if entities.title:
             existing_task = self.task_service.resolve_task_by_title(session, entities.title)
             self.task_service.delete_task(session, existing_task.id)
-            return True
+            return existing_task
 
-        return False
+        return None
 
     def _normalize_title(self, title: str | None) -> str | None:
         if not title:
