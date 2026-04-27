@@ -17,3 +17,10 @@
 .error {
   color: #ff0000;
 }
+
+@media (max-width: 960px) {
+  .tasksPage {
+    padding: 52px 16px 36px;
+    gap: 40px;
+  }
+}

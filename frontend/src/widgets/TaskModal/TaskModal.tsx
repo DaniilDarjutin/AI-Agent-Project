@@ -8,6 +8,7 @@ import type {
   TaskPriority,
   UpdateTaskPayload,
 } from "../../entities/task/task.api";
+import { data } from "react-router-dom";
 
 type TaskModalProps = {
   isOpen: boolean;
@@ -28,6 +29,7 @@ export default function TaskModal({
   onSave,
   onDelete,
 }: TaskModalProps) {
+  const [id, setId] = useState(0);
   const [status, setStatus] = useState<TaskStatus>("todo");
   const [title, setTitle] = useState("Написать отчёт");
   const [description, setDescription] = useState("Написать отчёт");
@@ -37,6 +39,7 @@ export default function TaskModal({
   useEffect(() => {
     if (!task) return;
 
+    setId(task.id);
     setStatus(task.status);
     setTitle(task.title);
     setDescription(task.description ?? "");
@@ -71,7 +74,7 @@ export default function TaskModal({
         onClick={(event) => event.stopPropagation()}
       >
         <div className={styles.header}>
-          <h2 className={styles.title}>Редактировать задачу</h2>
+          <h2 className={styles.title}>Редактировать задачу {id}</h2>
 
           <button
             type="button"

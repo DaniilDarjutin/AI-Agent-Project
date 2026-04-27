@@ -1,0 +1,143 @@
+.controlsPanel {
+  width: 100%;
+  max-width: 1008px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 16px 18px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(12px);
+  box-sizing: border-box;
+}
+
+.panelHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.panelInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.panelTitle {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 500;
+  color: #2b1d28;
+  line-height: 1.15;
+}
+
+.searchGroup,
+.controlGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.controlLabel {
+  font-size: 14px;
+  color: #4b3b48;
+}
+
+.searchInput,
+.select {
+  width: 100%;
+  height: 48px;
+  padding: 0 16px;
+  border: 1px solid rgba(0, 0, 0, 0.09);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.92);
+  font-family: 'Roboto Mono', 'Courier New', monospace;
+  font-size: 15px;
+  color: #2b1d28;
+  box-sizing: border-box;
+}
+
+.searchInput:focus,
+.select:focus {
+  outline: none;
+  border-color: rgba(46, 124, 226, 0.35);
+  box-shadow: 0 0 0 4px rgba(46, 124, 226, 0.08);
+}
+
+.filtersRow {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.panelFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.resultsInfo {
+  font-size: 14px;
+  color: #4b3b48;
+  line-height: 1.1;
+}
+
+.toggleButton,
+.resetButton {
+  min-width: 112px;
+  height: 38px;
+  padding: 0 16px;
+  border: none;
+  border-radius: 14px;
+  background: #2b1d28;
+  color: #ffffff;
+  font-family: 'Roboto Mono', 'Courier New', monospace;
+  font-size: 14px;
+  cursor: pointer;
+  transition:
+    transform 0.15s ease,
+    opacity 0.2s ease;
+}
+
+.toggleButton {
+  background: rgba(43, 29, 40, 0.1);
+  color: #2b1d28;
+}
+
+.toggleButton:hover,
+.resetButton:hover {
+  transform: translateY(-1px);
+  opacity: 0.92;
+}
+
+@media (max-width: 960px) {
+  .controlsPanel {
+    padding: 14px;
+  }
+
+  .filtersRow {
+    grid-template-columns: 1fr;
+  }
+
+  .panelFooter {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .panelHeader {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .panelTitle {
+    font-size: 17px;
+  }
+
+  .toggleButton,
+  .resetButton {
+    width: 100%;
+  }
+}
