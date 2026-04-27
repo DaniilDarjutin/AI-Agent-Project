@@ -121,6 +121,18 @@ class AIService:
             token = session_id_cvar.set(chat_id)
             try:
                 response = giga.chat(Chat(messages=llm_messages))
+            except Exception as e:
+                print("GIGACHAT ERROR:", repr(e))
+                return self._respond(
+                    session=session,
+                    chat_id=chat_id,
+                    response=ChatResponse(
+                        reply=self._build_gigachat_error_message(e),
+                        action="unknown",
+                        requires_confirmation=False,
+                        entities=None
+                    )
+                )
             finally:
                 session_id_cvar.reset(token)
 
@@ -652,3 +664,21 @@ class AIService:
 
             candidate = raw_content[start:end + 1]
             return json.loads(candidate)
+
+    def _build_gigachat_error_message(self, error: Exception) -> str:
+        error_name = type(error).__name__
+        error_text = str(error)
+
+        if "403" in error_text or "Forbidden" in error_name or "Forbidden" in error_text:
+            return (
+                "Не удалось обратиться к GigaChat из текущего окружения. "
+                "Если backend запущен в Docker, попробуйте запустить backend локально."
+            )
+
+        if "CERTIFICATE_VERIFY_FAILED" in error_text or "SSLError" in error_name:
+            return (
+                "Контейнер не может проверить сертификат на пути к GigaChat. "
+                "Попробуйте запустить backend локально."
+            )
+
+        return "Не удалось получить ответ от GigaChat. Попробуйте позже."
