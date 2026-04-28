@@ -2,13 +2,16 @@ from typing import Sequence
 from fastapi import HTTPException
 from sqlmodel import Session
 from app.models.task import Task
+from app.repositories.task_history_repository import TaskHistoryRepository
 from app.repositories.task_repository import TaskRepository
+from app.models.task_history import TaskHistory
 from app.schemas.task import TaskCreate, TaskUpdate
 from app.utils.exceptions import AmbiguousTaskMatchError
 
 class TaskService:
     def __init__(self, task_repository: TaskRepository):
         self.task_repository = task_repository
+        self.task_history_repository = TaskHistoryRepository()
 
     def get_all_tasks(self, session: Session) -> Sequence[Task]:
         return self.task_repository.get_all(session)
@@ -71,7 +74,14 @@ class TaskService:
         return matches[0]
 
     def create_task(self, session: Session, task_data: TaskCreate) -> Task:
-        return self.task_repository.create(session, task_data)
+        task = self.task_repository.create(session, task_data)
+        self.task_history_repository.create(
+            session,
+            task_id=task.id,
+            action_type="created",
+            new_value=task.title,
+        )
+        return task
 
     def update_task(self, session: Session, task_id: int, task_data: TaskUpdate) -> Task:
         task = self.task_repository.get_by_id(session, task_id)
@@ -79,7 +89,26 @@ class TaskService:
         if task is None:
             raise HTTPException(status_code=404, detail="Task not found")
 
-        return self.task_repository.update(session, task, task_data)
+        before_update = self._snapshot_task(task)
+        updated_task = self.task_repository.update(session, task, task_data)
+        after_update = self._snapshot_task(updated_task)
+
+        for field_name, old_value in before_update.items():
+            new_value = after_update[field_name]
+
+            if old_value == new_value:
+                continue
+
+            self.task_history_repository.create(
+                session,
+                task_id=updated_task.id,
+                action_type="updated",
+                field_name=field_name,
+                old_value=old_value,
+                new_value=new_value,
+            )
+
+        return updated_task
 
     def delete_task(self, session: Session, task_id: int) -> None:
         task = self.task_repository.get_by_id(session, task_id)
@@ -87,7 +116,17 @@ class TaskService:
         if task is None:
             raise HTTPException(status_code=404, detail="Task not found")
 
+        self.task_history_repository.create(
+            session,
+            task_id=task.id,
+            action_type="deleted",
+            old_value=task.title,
+        )
         self.task_repository.delete(session, task)
+
+    def get_task_history(self, session: Session, task_id: int) -> Sequence[TaskHistory]:
+        self.get_task_by_id(session, task_id)
+        return self.task_history_repository.get_by_task_id(session, task_id)
 
     def _tokenize(self, text: str) -> list[str]:
         stop_words = {"в", "на", "и", "с", "по", "к", "из", "за", "до", "для"}
@@ -97,3 +136,12 @@ class TaskService:
             for word in text.split()
             if word.strip() and word.strip().lower() not in stop_words
         ]
+
+    def _snapshot_task(self, task: Task) -> dict[str, str | None]:
+        return {
+            "title": task.title,
+            "description": task.description,
+            "status": task.status.value,
+            "priority": task.priority.value,
+            "due_date": task.due_date.isoformat() if task.due_date else None,
+        }

@@ -3,7 +3,7 @@ from fastapi import APIRouter, Depends, Response, status
 from sqlmodel import Session
 from app.core.database import get_session
 from app.repositories.task_repository import TaskRepository
-from app.schemas.task import TaskCreate, TaskRead, TaskUpdate
+from app.schemas.task import TaskCreate, TaskHistoryRead, TaskRead, TaskUpdate
 from app.services.task_service import TaskService
 
 
@@ -21,6 +21,11 @@ def get_tasks(session: Session = Depends(get_session)):
 @router.get("/{task_id}", response_model=TaskRead)
 def get_task(task_id: int, session: Session = Depends(get_session)):
     return task_service.get_task_by_id(session, task_id)
+
+
+@router.get("/{task_id}/history", response_model=Sequence[TaskHistoryRead])
+def get_task_history(task_id: int, session: Session = Depends(get_session)):
+    return task_service.get_task_history(session, task_id)
 
 
 @router.post("/", response_model=TaskRead, status_code=status.HTTP_201_CREATED)

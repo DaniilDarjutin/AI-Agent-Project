@@ -213,6 +213,7 @@ function TasksPage() {
         isOpen={isModalOpen}
         task={selectedTask}
         isSaving={isSaving}
+        isDeleting={isDeleting}
         onClose={handleCloseModal}
         onSave={handleSaveTask}
         onDelete={handleDeleteTask}

@@ -170,6 +170,13 @@
     border-top: 1px solid rgba(223, 223, 223, 1);
 }
 
+.footerActions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.historyButton,
 .deleteButton,
 .saveButton {
     border-radius: 10px;
@@ -183,9 +190,20 @@
     padding: 10px 20px;
 }
 
+.historyButton:hover,
 .deleteButton:hover,
 .saveButton:hover {
     transform: translateY(-1px);
+}
+
+.historyButton {
+    background: #ffffff;
+    border: 1px solid rgba(17, 182, 110, 0.24);
+    color: #0d8f58;
+}
+
+.historyButton:hover {
+    box-shadow: 0 8px 18px rgba(17, 182, 110, 0.12);
 }
 
 .deleteButton {

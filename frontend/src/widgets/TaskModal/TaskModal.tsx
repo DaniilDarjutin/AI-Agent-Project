@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import StatusTabs, {
   type TaskStatus,
 } from "../../features/update-task/StatusTabs";
@@ -8,7 +9,6 @@ import type {
   TaskPriority,
   UpdateTaskPayload,
 } from "../../entities/task/task.api";
-import { data } from "react-router-dom";
 
 type TaskModalProps = {
   isOpen: boolean;
@@ -29,6 +29,7 @@ export default function TaskModal({
   onSave,
   onDelete,
 }: TaskModalProps) {
+  const navigate = useNavigate();
   const [id, setId] = useState(0);
   const [status, setStatus] = useState<TaskStatus>("todo");
   const [title, setTitle] = useState("Написать отчёт");
@@ -65,6 +66,11 @@ export default function TaskModal({
     if (!isConfirmed) return;
 
     onDelete?.(task.id);
+  };
+
+  const handleHistoryClick = () => {
+    navigate(`/tasks/${task.id}/history`);
+    onClose();
   };
 
   return (
@@ -161,14 +167,24 @@ export default function TaskModal({
         </div>
 
         <div className={styles.footer}>
-          <button
-            type="button"
-            className={styles.deleteButton}
-            onClick={handleDeleteClick}
-            disabled={isDeleting}
-          >
-            {isDeleting ? "Удаление..." : "Удалить"}
-          </button>
+          <div className={styles.footerActions}>
+            <button
+              type="button"
+              className={styles.historyButton}
+              onClick={handleHistoryClick}
+            >
+              История
+            </button>
+
+            <button
+              type="button"
+              className={styles.deleteButton}
+              onClick={handleDeleteClick}
+              disabled={isDeleting}
+            >
+              {isDeleting ? "Удаление..." : "Удалить"}
+            </button>
+          </div>
 
           <button
             type="button"

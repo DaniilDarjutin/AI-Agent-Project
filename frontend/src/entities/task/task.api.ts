@@ -14,6 +14,16 @@ export type Task = {
   updated_at?: string
 }
 
+export type TaskHistoryItem = {
+  id: number
+  task_id: number
+  action_type: 'created' | 'updated' | 'deleted'
+  field_name: string | null
+  old_value: string | null
+  new_value: string | null
+  changed_at: string
+}
+
 export type UpdateTaskPayload = {
   title: string
   description: string | null
@@ -44,4 +54,14 @@ export const updateTask = async (
 
 export const deleteTask = async (taskId: number): Promise<void> => {
   await api.delete(`/tasks/${taskId}`)
+}
+
+export const getTask = async (taskId: number): Promise<Task> => {
+  const response = await api.get<Task>(`/tasks/${taskId}`)
+  return response.data
+}
+
+export const getTaskHistory = async (taskId: number): Promise<TaskHistoryItem[]> => {
+  const response = await api.get<TaskHistoryItem[]>(`/tasks/${taskId}/history`)
+  return response.data
 }

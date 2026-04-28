@@ -1,0 +1,374 @@
+{"kind":"deck","id":"ai-task-tracker-presentation","slideCount":10,"slideSize":{"width":1280,"height":720}}
+{"kind":"slide","slide":1,"id":"vyynej"}
+{"kind":"slide","slide":2,"id":"roma8v"}
+{"kind":"slide","slide":3,"id":"thqebf"}
+{"kind":"slide","slide":4,"id":"r3z6xo"}
+{"kind":"slide","slide":5,"id":"zd0xsp"}
+{"kind":"slide","slide":6,"id":"teyvav"}
+{"kind":"slide","slide":7,"id":"unsuqg"}
+{"kind":"slide","slide":8,"id":"q2yujd"}
+{"kind":"slide","slide":9,"id":"80ifrt"}
+{"kind":"slide","slide":10,"id":"zlklc3"}
+{"kind":"shape","slide":1,"id":"2","role":"bg blob","bbox":[-120,-130,360,360]}
+{"kind":"shape","slide":1,"id":"3","role":"bg blob","bbox":[1080,520,260,260]}
+{"kind":"shape","slide":1,"id":"4","role":"bg blob","bbox":[930,-40,180,180]}
+{"kind":"shape","slide":1,"id":"5","role":"cover panel","bbox":[64,92,1152,548]}
+{"kind":"shape","slide":1,"id":"6","role":"cover accent","bbox":[64,92,14,548]}
+{"kind":"shape","slide":1,"id":"7","role":"cover eyebrow","bbox":[98,118,220,18]}
+{"kind":"textbox","slide":1,"id":"7","role":"cover eyebrow","text":"PROJECT REVIEW","textChars":14,"textLines":1,"bbox":[98,118,220,18]}
+{"kind":"shape","slide":1,"id":"8","role":"cover title","bbox":[98,168,620,128]}
+{"kind":"textbox","slide":1,"id":"8","role":"cover title","text":"AI Task Tracker","textChars":15,"textLines":1,"bbox":[98,168,620,128]}
+{"kind":"shape","slide":1,"id":"9","role":"cover subtitle","bbox":[100,322,630,88]}
+{"kind":"textbox","slide":1,"id":"9","role":"cover subtitle","text":"AI-ассистент для управления задачами через чат, канбан и историю изменений","textChars":74,"textLines":1,"bbox":[100,322,630,88]}
+{"kind":"shape","slide":1,"id":"10","role":"cover insight","bbox":[98,462,330,96]}
+{"kind":"shape","slide":1,"id":"11","role":"cover insight text","bbox":[124,488,282,30]}
+{"kind":"textbox","slide":1,"id":"11","role":"cover insight text","text":"Chat -> Action -> Board","textChars":23,"textLines":1,"bbox":[124,488,282,30]}
+{"kind":"shape","slide":1,"id":"12","role":"cover insight caption","bbox":[124,524,260,18]}
+{"kind":"textbox","slide":1,"id":"12","role":"cover insight caption","text":"AI-слой поверх управления задачами","textChars":34,"textLines":1,"bbox":[124,524,260,18]}
+{"kind":"shape","slide":1,"id":"13","role":"cover right panel","bbox":[794,146,352,372]}
+{"kind":"shape","slide":1,"id":"14","role":"cover right eyebrow","bbox":[826,180,130,18]}
+{"kind":"textbox","slide":1,"id":"14","role":"cover right eyebrow","text":"Core blocks","textChars":11,"textLines":1,"bbox":[826,180,130,18]}
+{"kind":"shape","slide":1,"id":"15","role":"cover right title","bbox":[826,218,220,160]}
+{"kind":"textbox","slide":1,"id":"15","role":"cover right title","text":"Chat\nKanban\nHistory","textChars":19,"textLines":3,"bbox":[826,218,220,160]}
+{"kind":"shape","slide":1,"id":"16","role":"cover right body","bbox":[826,386,256,72]}
+{"kind":"textbox","slide":1,"id":"16","role":"cover right body","text":"Прототип уже соединяет AI-интерфейс, backend действия и локальное хранение состояния.","textChars":85,"textLines":1,"bbox":[826,386,256,72]}
+{"kind":"shape","slide":1,"id":"17","role":"chip","bbox":[98,548,78,32]}
+{"kind":"shape","slide":1,"id":"18","role":"chip text","bbox":[114,556,46,16]}
+{"kind":"textbox","slide":1,"id":"18","role":"chip text","text":"Chat","textChars":4,"textLines":1,"bbox":[114,556,46,16]}
+{"kind":"shape","slide":1,"id":"19","role":"chip","bbox":[188,548,104,32]}
+{"kind":"shape","slide":1,"id":"20","role":"chip text","bbox":[204,556,72,16]}
+{"kind":"textbox","slide":1,"id":"20","role":"chip text","text":"FastAPI","textChars":7,"textLines":1,"bbox":[204,556,72,16]}
+{"kind":"shape","slide":1,"id":"21","role":"chip","bbox":[304,548,88,32]}
+{"kind":"shape","slide":1,"id":"22","role":"chip text","bbox":[320,556,56,16]}
+{"kind":"textbox","slide":1,"id":"22","role":"chip text","text":"React","textChars":5,"textLines":1,"bbox":[320,556,56,16]}
+{"kind":"shape","slide":1,"id":"23","role":"chip","bbox":[404,548,90,32]}
+{"kind":"shape","slide":1,"id":"24","role":"chip text","bbox":[420,556,58,16]}
+{"kind":"textbox","slide":1,"id":"24","role":"chip text","text":"SQLite","textChars":6,"textLines":1,"bbox":[420,556,58,16]}
+{"kind":"shape","slide":1,"id":"25","role":"chip","bbox":[506,548,104,32]}
+{"kind":"shape","slide":1,"id":"26","role":"chip text","bbox":[522,556,72,16]}
+{"kind":"textbox","slide":1,"id":"26","role":"chip text","text":"GigaChat","textChars":8,"textLines":1,"bbox":[522,556,72,16]}
+{"kind":"shape","slide":2,"id":"2","role":"bg blob","bbox":[-120,-130,360,360]}
+{"kind":"shape","slide":2,"id":"3","role":"bg blob","bbox":[1080,520,260,260]}
+{"kind":"shape","slide":2,"id":"4","role":"bg blob","bbox":[930,-40,180,180]}
+{"kind":"shape","slide":2,"id":"5","role":"eyebrow","bbox":[72,36,180,20]}
+{"kind":"textbox","slide":2,"id":"5","role":"eyebrow","text":"01","textChars":2,"textLines":1,"bbox":[72,36,180,20]}
+{"kind":"shape","slide":2,"id":"6","role":"slide index","bbox":[1080,36,128,20]}
+{"kind":"textbox","slide":2,"id":"6","role":"slide index","text":"02 / 10","textChars":7,"textLines":1,"bbox":[1080,36,128,20]}
+{"kind":"shape","slide":2,"id":"7","role":"header rule","bbox":[72,62,1136,2]}
+{"kind":"shape","slide":2,"id":"8","role":"title","bbox":[72,92,720,90]}
+{"kind":"textbox","slide":2,"id":"8","role":"title","text":"Что это такое","textChars":13,"textLines":1,"bbox":[72,92,720,90]}
+{"kind":"shape","slide":2,"id":"9","role":"lead","bbox":[72,188,760,54]}
+{"kind":"textbox","slide":2,"id":"9","role":"lead","text":"Один продуктовый контур вместо разрозненных действий.","textChars":53,"textLines":1,"bbox":[72,188,760,54]}
+{"kind":"shape","slide":2,"id":"10","role":"card Chat-first","bbox":[92,326,348,246]}
+{"kind":"shape","slide":2,"id":"11","role":"card accent Chat-first","bbox":[92,326,10,246]}
+{"kind":"shape","slide":2,"id":"12","role":"card label Chat-first","bbox":[118,350,302,24]}
+{"kind":"textbox","slide":2,"id":"12","role":"card label Chat-first","text":"Chat-first","textChars":10,"textLines":1,"bbox":[118,350,302,24]}
+{"kind":"shape","slide":2,"id":"13","role":"card body Chat-first","bbox":[118,400,300,148]}
+{"kind":"textbox","slide":2,"id":"13","role":"card body Chat-first","text":"Пользователь пишет задачу\nобычным языком, без отдельной\nформы и ручного поиска полей.","textChars":85,"textLines":3,"bbox":[118,400,300,148]}
+{"kind":"shape","slide":2,"id":"14","role":"card Task board","bbox":[464,326,348,246]}
+{"kind":"shape","slide":2,"id":"15","role":"card accent Task board","bbox":[464,326,10,246]}
+{"kind":"shape","slide":2,"id":"16","role":"card label Task board","bbox":[490,350,302,24]}
+{"kind":"textbox","slide":2,"id":"16","role":"card label Task board","text":"Task board","textChars":10,"textLines":1,"bbox":[490,350,302,24]}
+{"kind":"shape","slide":2,"id":"17","role":"card body Task board","bbox":[490,400,300,148]}
+{"kind":"textbox","slide":2,"id":"17","role":"card body Task board","text":"Все задачи видны в канбане:\nстатус, приоритет, дедлайн,\nбыстрый доступ к\nредактированию.","textChars":88,"textLines":4,"bbox":[490,400,300,148]}
+{"kind":"shape","slide":2,"id":"18","role":"card History","bbox":[836,326,348,246]}
+{"kind":"shape","slide":2,"id":"19","role":"card accent History","bbox":[836,326,10,246]}
+{"kind":"shape","slide":2,"id":"20","role":"card label History","bbox":[862,350,302,24]}
+{"kind":"textbox","slide":2,"id":"20","role":"card label History","text":"History","textChars":7,"textLines":1,"bbox":[862,350,302,24]}
+{"kind":"shape","slide":2,"id":"21","role":"card body History","bbox":[862,400,300,148]}
+{"kind":"textbox","slide":2,"id":"21","role":"card body History","text":"Каждое изменение сохраняется\nкак отдельное событие и\nсобирается в понятный\nтаймлайн.","textChars":84,"textLines":4,"bbox":[862,400,300,148]}
+{"kind":"shape","slide":3,"id":"2","role":"bg blob","bbox":[-120,-130,360,360]}
+{"kind":"shape","slide":3,"id":"3","role":"bg blob","bbox":[1080,520,260,260]}
+{"kind":"shape","slide":3,"id":"4","role":"bg blob","bbox":[930,-40,180,180]}
+{"kind":"shape","slide":3,"id":"5","role":"eyebrow","bbox":[72,36,180,20]}
+{"kind":"textbox","slide":3,"id":"5","role":"eyebrow","text":"02","textChars":2,"textLines":1,"bbox":[72,36,180,20]}
+{"kind":"shape","slide":3,"id":"6","role":"slide index","bbox":[1080,36,128,20]}
+{"kind":"textbox","slide":3,"id":"6","role":"slide index","text":"03 / 10","textChars":7,"textLines":1,"bbox":[1080,36,128,20]}
+{"kind":"shape","slide":3,"id":"7","role":"header rule","bbox":[72,62,1136,2]}
+{"kind":"shape","slide":3,"id":"8","role":"title","bbox":[72,92,720,90]}
+{"kind":"textbox","slide":3,"id":"8","role":"title","text":"Какие проблемы решает","textChars":21,"textLines":1,"bbox":[72,92,720,90]}
+{"kind":"shape","slide":3,"id":"9","role":"lead","bbox":[72,188,760,54]}
+{"kind":"textbox","slide":3,"id":"9","role":"lead","text":"Смысл проекта не в еще одном todo-list, а в сокращении операционной нагрузки.","textChars":77,"textLines":1,"bbox":[72,188,760,54]}
+{"kind":"shape","slide":3,"id":"10","role":"card Много кликов","bbox":[92,326,348,246]}
+{"kind":"shape","slide":3,"id":"11","role":"card accent Много кликов","bbox":[92,326,10,246]}
+{"kind":"shape","slide":3,"id":"12","role":"card label Много кликов","bbox":[118,350,302,24]}
+{"kind":"textbox","slide":3,"id":"12","role":"card label Много кликов","text":"Много кликов","textChars":12,"textLines":1,"bbox":[118,350,302,24]}
+{"kind":"shape","slide":3,"id":"13","role":"card body Много кликов","bbox":[118,400,300,148]}
+{"kind":"textbox","slide":3,"id":"13","role":"card body Много кликов","text":"Часть CRUD-операций уходит в\nестественный язык: создать,\nнайти, обновить, удалить.","textChars":82,"textLines":3,"bbox":[118,400,300,148]}
+{"kind":"shape","slide":3,"id":"14","role":"card Потеря контекста","bbox":[464,326,348,246]}
+{"kind":"shape","slide":3,"id":"15","role":"card accent Потеря контекста","bbox":[464,326,10,246]}
+{"kind":"shape","slide":3,"id":"16","role":"card label Потеря контекста","bbox":[490,350,302,24]}
+{"kind":"textbox","slide":3,"id":"16","role":"card label Потеря контекста","text":"Потеря контекста","textChars":16,"textLines":1,"bbox":[490,350,302,24]}
+{"kind":"shape","slide":3,"id":"17","role":"card body Потеря контекста","bbox":[490,400,300,148]}
+{"kind":"textbox","slide":3,"id":"17","role":"card body Потеря контекста","text":"Ассистент помнит последнюю\nобсуждаемую задачу и умеет\nработать с ссылками вроде\n«эту» или «последнюю».","textChars":102,"textLines":4,"bbox":[490,400,300,148]}
+{"kind":"shape","slide":3,"id":"18","role":"card Низкая прозрачность","bbox":[836,326,348,246]}
+{"kind":"shape","slide":3,"id":"19","role":"card accent Низкая прозрачность","bbox":[836,326,10,246]}
+{"kind":"shape","slide":3,"id":"20","role":"card label Низкая прозрачность","bbox":[862,350,302,24]}
+{"kind":"textbox","slide":3,"id":"20","role":"card label Низкая прозрачность","text":"Низкая прозрачность","textChars":19,"textLines":1,"bbox":[862,350,302,24]}
+{"kind":"shape","slide":3,"id":"21","role":"card body Низкая прозрачность","bbox":[862,400,300,148]}
+{"kind":"textbox","slide":3,"id":"21","role":"card body Низкая прозрачность","text":"Изменения по задаче\nфиксируются по времени,\nпоэтому легче понять, что\nименно уже менялось.","textChars":90,"textLines":4,"bbox":[862,400,300,148]}
+{"kind":"shape","slide":4,"id":"2","role":"bg blob","bbox":[-120,-130,360,360]}
+{"kind":"shape","slide":4,"id":"3","role":"bg blob","bbox":[1080,520,260,260]}
+{"kind":"shape","slide":4,"id":"4","role":"bg blob","bbox":[930,-40,180,180]}
+{"kind":"shape","slide":4,"id":"5","role":"eyebrow","bbox":[72,36,180,20]}
+{"kind":"textbox","slide":4,"id":"5","role":"eyebrow","text":"03","textChars":2,"textLines":1,"bbox":[72,36,180,20]}
+{"kind":"shape","slide":4,"id":"6","role":"slide index","bbox":[1080,36,128,20]}
+{"kind":"textbox","slide":4,"id":"6","role":"slide index","text":"04 / 10","textChars":7,"textLines":1,"bbox":[1080,36,128,20]}
+{"kind":"shape","slide":4,"id":"7","role":"header rule","bbox":[72,62,1136,2]}
+{"kind":"shape","slide":4,"id":"8","role":"title","bbox":[72,92,720,90]}
+{"kind":"textbox","slide":4,"id":"8","role":"title","text":"Как это работает","textChars":16,"textLines":1,"bbox":[72,92,720,90]}
+{"kind":"shape","slide":4,"id":"9","role":"lead","bbox":[72,188,760,54]}
+{"kind":"textbox","slide":4,"id":"9","role":"lead","text":"Поток от сообщения пользователя до сохраненной задачи.","textChars":54,"textLines":1,"bbox":[72,188,760,54]}
+{"kind":"shape","slide":4,"id":"10","role":"flow 1. Запрос","bbox":[52,360,206,180]}
+{"kind":"shape","slide":4,"id":"11","role":"flow accent 1. Запрос","bbox":[52,360,206,8]}
+{"kind":"shape","slide":4,"id":"12","role":"flow title 1. Запрос","bbox":[70,386,170,22]}
+{"kind":"textbox","slide":4,"id":"12","role":"flow title 1. Запрос","text":"1. Запрос","textChars":9,"textLines":1,"bbox":[70,386,170,22]}
+{"kind":"shape","slide":4,"id":"13","role":"flow body 1. Запрос","bbox":[70,426,170,82]}
+{"kind":"textbox","slide":4,"id":"13","role":"flow body 1. Запрос","text":"Пользователь пишет\nзапрос в `/chat`.","textChars":36,"textLines":2,"bbox":[70,426,170,82]}
+{"kind":"shape","slide":4,"id":"14","role":"arrow","bbox":[260,440,34,18]}
+{"kind":"shape","slide":4,"id":"15","role":"flow 2. Intent","bbox":[278,360,206,180]}
+{"kind":"shape","slide":4,"id":"16","role":"flow accent 2. Intent","bbox":[278,360,206,8]}
+{"kind":"shape","slide":4,"id":"17","role":"flow title 2. Intent","bbox":[296,386,170,22]}
+{"kind":"textbox","slide":4,"id":"17","role":"flow title 2. Intent","text":"2. Intent","textChars":9,"textLines":1,"bbox":[296,386,170,22]}
+{"kind":"shape","slide":4,"id":"18","role":"flow body 2. Intent","bbox":[296,426,170,82]}
+{"kind":"textbox","slide":4,"id":"18","role":"flow body 2. Intent","text":"GigaChat\nвозвращает JSON с\nintent и entities.","textChars":45,"textLines":3,"bbox":[296,426,170,82]}
+{"kind":"shape","slide":4,"id":"19","role":"arrow","bbox":[486,440,34,18]}
+{"kind":"shape","slide":4,"id":"20","role":"flow 3. Подтверждение","bbox":[504,360,206,180]}
+{"kind":"shape","slide":4,"id":"21","role":"flow accent 3. Подтверждение","bbox":[504,360,206,8]}
+{"kind":"shape","slide":4,"id":"22","role":"flow title 3. Подтверждение","bbox":[522,386,170,22]}
+{"kind":"textbox","slide":4,"id":"22","role":"flow title 3. Подтверждение","text":"3. Подтверждение","textChars":16,"textLines":1,"bbox":[522,386,170,22]}
+{"kind":"shape","slide":4,"id":"23","role":"flow body 3. Подтверждение","bbox":[522,426,170,82]}
+{"kind":"textbox","slide":4,"id":"23","role":"flow body 3. Подтверждение","text":"Создание,\nизменение и\nудаление проходят\nчерез явное\nподтверждение.","textChars":66,"textLines":5,"bbox":[522,426,170,82]}
+{"kind":"shape","slide":4,"id":"24","role":"arrow","bbox":[712,440,34,18]}
+{"kind":"shape","slide":4,"id":"25","role":"flow 4. Действие","bbox":[730,360,206,180]}
+{"kind":"shape","slide":4,"id":"26","role":"flow accent 4. Действие","bbox":[730,360,206,8]}
+{"kind":"shape","slide":4,"id":"27","role":"flow title 4. Действие","bbox":[748,386,170,22]}
+{"kind":"textbox","slide":4,"id":"27","role":"flow title 4. Действие","text":"4. Действие","textChars":11,"textLines":1,"bbox":[748,386,170,22]}
+{"kind":"shape","slide":4,"id":"28","role":"flow body 4. Действие","bbox":[748,426,170,82]}
+{"kind":"textbox","slide":4,"id":"28","role":"flow body 4. Действие","text":"ActionService и\nTaskService\nисполняют доменную\nоперацию.","textChars":56,"textLines":4,"bbox":[748,426,170,82]}
+{"kind":"shape","slide":4,"id":"29","role":"arrow","bbox":[938,440,34,18]}
+{"kind":"shape","slide":4,"id":"30","role":"flow 5. Состояние","bbox":[956,360,206,180]}
+{"kind":"shape","slide":4,"id":"31","role":"flow accent 5. Состояние","bbox":[956,360,206,8]}
+{"kind":"shape","slide":4,"id":"32","role":"flow title 5. Состояние","bbox":[974,386,170,22]}
+{"kind":"textbox","slide":4,"id":"32","role":"flow title 5. Состояние","text":"5. Состояние","textChars":12,"textLines":1,"bbox":[974,386,170,22]}
+{"kind":"shape","slide":4,"id":"33","role":"flow body 5. Состояние","bbox":[974,426,170,82]}
+{"kind":"textbox","slide":4,"id":"33","role":"flow body 5. Состояние","text":"SQLite,\nчат-история и task\ncontext\nсинхронизируют\nрезультат.","textChars":60,"textLines":5,"bbox":[974,426,170,82]}
+{"kind":"shape","slide":4,"id":"34","role":"flow footer","bbox":[92,594,1096,54]}
+{"kind":"shape","slide":4,"id":"35","role":"flow footer text","bbox":[120,612,1040,18]}
+{"kind":"textbox","slide":4,"id":"35","role":"flow footer text","text":"Ключевой контрольный слой: структурированный prompt и confirmation state перед изменяющими действиями.","textChars":102,"textLines":1,"bbox":[120,612,1040,18]}
+{"kind":"shape","slide":5,"id":"2","role":"bg blob","bbox":[-120,-130,360,360]}
+{"kind":"shape","slide":5,"id":"3","role":"bg blob","bbox":[1080,520,260,260]}
+{"kind":"shape","slide":5,"id":"4","role":"bg blob","bbox":[930,-40,180,180]}
+{"kind":"shape","slide":5,"id":"5","role":"eyebrow","bbox":[72,36,180,20]}
+{"kind":"textbox","slide":5,"id":"5","role":"eyebrow","text":"04","textChars":2,"textLines":1,"bbox":[72,36,180,20]}
+{"kind":"shape","slide":5,"id":"6","role":"slide index","bbox":[1080,36,128,20]}
+{"kind":"textbox","slide":5,"id":"6","role":"slide index","text":"05 / 10","textChars":7,"textLines":1,"bbox":[1080,36,128,20]}
+{"kind":"shape","slide":5,"id":"7","role":"header rule","bbox":[72,62,1136,2]}
+{"kind":"shape","slide":5,"id":"8","role":"title","bbox":[72,92,720,90]}
+{"kind":"textbox","slide":5,"id":"8","role":"title","text":"Что уже реализовано","textChars":19,"textLines":1,"bbox":[72,92,720,90]}
+{"kind":"shape","slide":5,"id":"9","role":"lead","bbox":[72,188,760,54]}
+{"kind":"textbox","slide":5,"id":"9","role":"lead","text":"Это не концепт на словах, а рабочий prototype contour.","textChars":54,"textLines":1,"bbox":[72,188,760,54]}
+{"kind":"shape","slide":5,"id":"10","role":"card AI CRUD","bbox":[92,326,348,246]}
+{"kind":"shape","slide":5,"id":"11","role":"card accent AI CRUD","bbox":[92,326,10,246]}
+{"kind":"shape","slide":5,"id":"12","role":"card label AI CRUD","bbox":[118,350,302,24]}
+{"kind":"textbox","slide":5,"id":"12","role":"card label AI CRUD","text":"AI CRUD","textChars":7,"textLines":1,"bbox":[118,350,302,24]}
+{"kind":"shape","slide":5,"id":"13","role":"card body AI CRUD","bbox":[118,400,300,148]}
+{"kind":"textbox","slide":5,"id":"13","role":"card body AI CRUD","text":"Чат умеет создавать,\nполучать, обновлять и удалять\nзадачи через intent routing.","textChars":79,"textLines":3,"bbox":[118,400,300,148]}
+{"kind":"shape","slide":5,"id":"14","role":"card Safe actions","bbox":[464,326,348,246]}
+{"kind":"shape","slide":5,"id":"15","role":"card accent Safe actions","bbox":[464,326,10,246]}
+{"kind":"shape","slide":5,"id":"16","role":"card label Safe actions","bbox":[490,350,302,24]}
+{"kind":"textbox","slide":5,"id":"16","role":"card label Safe actions","text":"Safe actions","textChars":12,"textLines":1,"bbox":[490,350,302,24]}
+{"kind":"shape","slide":5,"id":"17","role":"card body Safe actions","bbox":[490,400,300,148]}
+{"kind":"textbox","slide":5,"id":"17","role":"card body Safe actions","text":"Подтверждение хранится в chat\nstate и автоматически\nистекает через 10 минут.","textChars":76,"textLines":3,"bbox":[490,400,300,148]}
+{"kind":"shape","slide":5,"id":"18","role":"card Kanban UX","bbox":[836,326,348,246]}
+{"kind":"shape","slide":5,"id":"19","role":"card accent Kanban UX","bbox":[836,326,10,246]}
+{"kind":"shape","slide":5,"id":"20","role":"card label Kanban UX","bbox":[862,350,302,24]}
+{"kind":"textbox","slide":5,"id":"20","role":"card label Kanban UX","text":"Kanban UX","textChars":9,"textLines":1,"bbox":[862,350,302,24]}
+{"kind":"shape","slide":5,"id":"21","role":"card body Kanban UX","bbox":[862,400,300,148]}
+{"kind":"textbox","slide":5,"id":"21","role":"card body Kanban UX","text":"На доске уже есть поиск,\nфильтры, сортировка, модалка\nредактирования и переход в\nисторию.","textChars":89,"textLines":4,"bbox":[862,400,300,148]}
+{"kind":"shape","slide":6,"id":"2","role":"bg blob","bbox":[-120,-130,360,360]}
+{"kind":"shape","slide":6,"id":"3","role":"bg blob","bbox":[1080,520,260,260]}
+{"kind":"shape","slide":6,"id":"4","role":"bg blob","bbox":[930,-40,180,180]}
+{"kind":"shape","slide":6,"id":"5","role":"eyebrow","bbox":[72,36,180,20]}
+{"kind":"textbox","slide":6,"id":"5","role":"eyebrow","text":"05","textChars":2,"textLines":1,"bbox":[72,36,180,20]}
+{"kind":"shape","slide":6,"id":"6","role":"slide index","bbox":[1080,36,128,20]}
+{"kind":"textbox","slide":6,"id":"6","role":"slide index","text":"06 / 10","textChars":7,"textLines":1,"bbox":[1080,36,128,20]}
+{"kind":"shape","slide":6,"id":"7","role":"header rule","bbox":[72,62,1136,2]}
+{"kind":"shape","slide":6,"id":"8","role":"title","bbox":[72,92,720,90]}
+{"kind":"textbox","slide":6,"id":"8","role":"title","text":"Страницы продукта","textChars":17,"textLines":1,"bbox":[72,92,720,90]}
+{"kind":"shape","slide":6,"id":"9","role":"lead","bbox":[72,188,760,54]}
+{"kind":"textbox","slide":6,"id":"9","role":"lead","text":"Сейчас продукт состоит из трех основных пользовательских экранов.","textChars":65,"textLines":1,"bbox":[72,188,760,54]}
+{"kind":"shape","slide":6,"id":"10","role":"route /chat","bbox":[92,304,350,286]}
+{"kind":"shape","slide":6,"id":"11","role":"route path /chat","bbox":[114,326,306,22]}
+{"kind":"textbox","slide":6,"id":"11","role":"route path /chat","text":"/chat","textChars":5,"textLines":1,"bbox":[114,326,306,22]}
+{"kind":"shape","slide":6,"id":"12","role":"route title /chat","bbox":[114,362,306,66]}
+{"kind":"textbox","slide":6,"id":"12","role":"route title /chat","text":"Диалог с ассистентом","textChars":20,"textLines":1,"bbox":[114,362,306,66]}
+{"kind":"shape","slide":6,"id":"13","role":"route tag история чата","bbox":[114,442,306,34]}
+{"kind":"shape","slide":6,"id":"14","role":"route tag text история чата","bbox":[128,451,278,16]}
+{"kind":"textbox","slide":6,"id":"14","role":"route tag text история чата","text":"история чата","textChars":12,"textLines":1,"bbox":[128,451,278,16]}
+{"kind":"shape","slide":6,"id":"15","role":"route tag новый чат","bbox":[114,484,306,34]}
+{"kind":"shape","slide":6,"id":"16","role":"route tag text новый чат","bbox":[128,493,278,16]}
+{"kind":"textbox","slide":6,"id":"16","role":"route tag text новый чат","text":"новый чат","textChars":9,"textLines":1,"bbox":[128,493,278,16]}
+{"kind":"shape","slide":6,"id":"17","role":"route tag natural language commands","bbox":[114,526,306,34]}
+{"kind":"shape","slide":6,"id":"18","role":"route tag text natural language commands","bbox":[128,535,278,16]}
+{"kind":"textbox","slide":6,"id":"18","role":"route tag text natural language commands","text":"natural language commands","textChars":25,"textLines":1,"bbox":[128,535,278,16]}
+{"kind":"shape","slide":6,"id":"19","role":"route /tasks","bbox":[466,304,350,286]}
+{"kind":"shape","slide":6,"id":"20","role":"route path /tasks","bbox":[488,326,306,22]}
+{"kind":"textbox","slide":6,"id":"20","role":"route path /tasks","text":"/tasks","textChars":6,"textLines":1,"bbox":[488,326,306,22]}
+{"kind":"shape","slide":6,"id":"21","role":"route title /tasks","bbox":[488,362,306,66]}
+{"kind":"textbox","slide":6,"id":"21","role":"route title /tasks","text":"Канбан и управление","textChars":19,"textLines":1,"bbox":[488,362,306,66]}
+{"kind":"shape","slide":6,"id":"22","role":"route tag поиск и фильтры","bbox":[488,442,306,34]}
+{"kind":"shape","slide":6,"id":"23","role":"route tag text поиск и фильтры","bbox":[502,451,278,16]}
+{"kind":"textbox","slide":6,"id":"23","role":"route tag text поиск и фильтры","text":"поиск и фильтры","textChars":15,"textLines":1,"bbox":[502,451,278,16]}
+{"kind":"shape","slide":6,"id":"24","role":"route tag сортировка","bbox":[488,484,306,34]}
+{"kind":"shape","slide":6,"id":"25","role":"route tag text сортировка","bbox":[502,493,278,16]}
+{"kind":"textbox","slide":6,"id":"25","role":"route tag text сортировка","text":"сортировка","textChars":10,"textLines":1,"bbox":[502,493,278,16]}
+{"kind":"shape","slide":6,"id":"26","role":"route tag редактирование задачи","bbox":[488,526,306,34]}
+{"kind":"shape","slide":6,"id":"27","role":"route tag text редактирование задачи","bbox":[502,535,278,16]}
+{"kind":"textbox","slide":6,"id":"27","role":"route tag text редактирование задачи","text":"редактирование задачи","textChars":21,"textLines":1,"bbox":[502,535,278,16]}
+{"kind":"shape","slide":6,"id":"28","role":"route /tasks/:taskId/history","bbox":[840,304,350,286]}
+{"kind":"shape","slide":6,"id":"29","role":"route path /tasks/:taskId/history","bbox":[862,326,306,22]}
+{"kind":"textbox","slide":6,"id":"29","role":"route path /tasks/:taskId/history","text":"/tasks/:taskId/history","textChars":22,"textLines":1,"bbox":[862,326,306,22]}
+{"kind":"shape","slide":6,"id":"30","role":"route title /tasks/:taskId/history","bbox":[862,362,306,66]}
+{"kind":"textbox","slide":6,"id":"30","role":"route title /tasks/:taskId/history","text":"История изменений","textChars":17,"textLines":1,"bbox":[862,362,306,66]}
+{"kind":"shape","slide":6,"id":"31","role":"route tag таймлайн событий","bbox":[862,442,306,34]}
+{"kind":"shape","slide":6,"id":"32","role":"route tag text таймлайн событий","bbox":[876,451,278,16]}
+{"kind":"textbox","slide":6,"id":"32","role":"route tag text таймлайн событий","text":"таймлайн событий","textChars":16,"textLines":1,"bbox":[876,451,278,16]}
+{"kind":"shape","slide":6,"id":"33","role":"route tag старые и новые значения","bbox":[862,484,306,34]}
+{"kind":"shape","slide":6,"id":"34","role":"route tag text старые и новые значения","bbox":[876,493,278,16]}
+{"kind":"textbox","slide":6,"id":"34","role":"route tag text старые и новые значения","text":"старые и новые значения","textChars":23,"textLines":1,"bbox":[876,493,278,16]}
+{"kind":"shape","slide":6,"id":"35","role":"route tag контекст по задаче","bbox":[862,526,306,34]}
+{"kind":"shape","slide":6,"id":"36","role":"route tag text контекст по задаче","bbox":[876,535,278,16]}
+{"kind":"textbox","slide":6,"id":"36","role":"route tag text контекст по задаче","text":"контекст по задаче","textChars":18,"textLines":1,"bbox":[876,535,278,16]}
+{"kind":"shape","slide":7,"id":"2","role":"bg blob","bbox":[-120,-130,360,360]}
+{"kind":"shape","slide":7,"id":"3","role":"bg blob","bbox":[1080,520,260,260]}
+{"kind":"shape","slide":7,"id":"4","role":"bg blob","bbox":[930,-40,180,180]}
+{"kind":"shape","slide":7,"id":"5","role":"eyebrow","bbox":[72,36,180,20]}
+{"kind":"textbox","slide":7,"id":"5","role":"eyebrow","text":"06","textChars":2,"textLines":1,"bbox":[72,36,180,20]}
+{"kind":"shape","slide":7,"id":"6","role":"slide index","bbox":[1080,36,128,20]}
+{"kind":"textbox","slide":7,"id":"6","role":"slide index","text":"07 / 10","textChars":7,"textLines":1,"bbox":[1080,36,128,20]}
+{"kind":"shape","slide":7,"id":"7","role":"header rule","bbox":[72,62,1136,2]}
+{"kind":"shape","slide":7,"id":"8","role":"title","bbox":[72,92,720,90]}
+{"kind":"textbox","slide":7,"id":"8","role":"title","text":"Архитектура","textChars":11,"textLines":1,"bbox":[72,92,720,90]}
+{"kind":"shape","slide":7,"id":"9","role":"lead","bbox":[72,188,760,54]}
+{"kind":"textbox","slide":7,"id":"9","role":"lead","text":"Слои разделены достаточно чисто для дальнейшего роста.","textChars":54,"textLines":1,"bbox":[72,188,760,54]}
+{"kind":"shape","slide":7,"id":"10","role":"layer Frontend","bbox":[86,350,248,188]}
+{"kind":"shape","slide":7,"id":"11","role":"layer marker Frontend","bbox":[110,372,42,42]}
+{"kind":"shape","slide":7,"id":"12","role":"layer label Frontend","bbox":[168,378,142,22]}
+{"kind":"textbox","slide":7,"id":"12","role":"layer label Frontend","text":"Frontend","textChars":8,"textLines":1,"bbox":[168,378,142,22]}
+{"kind":"shape","slide":7,"id":"13","role":"layer body Frontend","bbox":[110,434,200,82]}
+{"kind":"textbox","slide":7,"id":"13","role":"layer body Frontend","text":"React SPA, локальный\nchat id, отдельные\nэкраны и API-клиенты.","textChars":61,"textLines":3,"bbox":[110,434,200,82]}
+{"kind":"shape","slide":7,"id":"14","role":"arrow","bbox":[340,434,30,18]}
+{"kind":"shape","slide":7,"id":"15","role":"layer FastAPI routes","bbox":[358,350,248,188]}
+{"kind":"shape","slide":7,"id":"16","role":"layer marker FastAPI routes","bbox":[382,372,42,42]}
+{"kind":"shape","slide":7,"id":"17","role":"layer label FastAPI routes","bbox":[440,378,142,22]}
+{"kind":"textbox","slide":7,"id":"17","role":"layer label FastAPI routes","text":"FastAPI routes","textChars":14,"textLines":1,"bbox":[440,378,142,22]}
+{"kind":"shape","slide":7,"id":"18","role":"layer body FastAPI routes","bbox":[382,434,200,82]}
+{"kind":"textbox","slide":7,"id":"18","role":"layer body FastAPI routes","text":"Чат, задачи, история\nзадач и health-check\nкак отдельные\nendpoints.","textChars":66,"textLines":4,"bbox":[382,434,200,82]}
+{"kind":"shape","slide":7,"id":"19","role":"arrow","bbox":[612,434,30,18]}
+{"kind":"shape","slide":7,"id":"20","role":"layer Services","bbox":[630,350,248,188]}
+{"kind":"shape","slide":7,"id":"21","role":"layer marker Services","bbox":[654,372,42,42]}
+{"kind":"shape","slide":7,"id":"22","role":"layer label Services","bbox":[712,378,142,22]}
+{"kind":"textbox","slide":7,"id":"22","role":"layer label Services","text":"Services","textChars":8,"textLines":1,"bbox":[712,378,142,22]}
+{"kind":"shape","slide":7,"id":"23","role":"layer body Services","bbox":[654,434,200,82]}
+{"kind":"textbox","slide":7,"id":"23","role":"layer body Services","text":"AIService,\nActionService,\nTaskService, chat\nhistory/state\nservices.","textChars":67,"textLines":5,"bbox":[654,434,200,82]}
+{"kind":"shape","slide":7,"id":"24","role":"arrow","bbox":[884,434,30,18]}
+{"kind":"shape","slide":7,"id":"25","role":"layer Storage + LLM","bbox":[902,350,248,188]}
+{"kind":"shape","slide":7,"id":"26","role":"layer marker Storage + LLM","bbox":[926,372,42,42]}
+{"kind":"shape","slide":7,"id":"27","role":"layer label Storage + LLM","bbox":[984,378,142,22]}
+{"kind":"textbox","slide":7,"id":"27","role":"layer label Storage + LLM","text":"Storage + LLM","textChars":13,"textLines":1,"bbox":[984,378,142,22]}
+{"kind":"shape","slide":7,"id":"28","role":"layer body Storage + LLM","bbox":[926,434,200,82]}
+{"kind":"textbox","slide":7,"id":"28","role":"layer body Storage + LLM","text":"SQLite для состояния\nи GigaChat для\nизвлечения\nintent/entities.","textChars":63,"textLines":4,"bbox":[926,434,200,82]}
+{"kind":"shape","slide":8,"id":"2","role":"bg blob","bbox":[-120,-130,360,360]}
+{"kind":"shape","slide":8,"id":"3","role":"bg blob","bbox":[1080,520,260,260]}
+{"kind":"shape","slide":8,"id":"4","role":"bg blob","bbox":[930,-40,180,180]}
+{"kind":"shape","slide":8,"id":"5","role":"eyebrow","bbox":[72,36,180,20]}
+{"kind":"textbox","slide":8,"id":"5","role":"eyebrow","text":"07","textChars":2,"textLines":1,"bbox":[72,36,180,20]}
+{"kind":"shape","slide":8,"id":"6","role":"slide index","bbox":[1080,36,128,20]}
+{"kind":"textbox","slide":8,"id":"6","role":"slide index","text":"08 / 10","textChars":7,"textLines":1,"bbox":[1080,36,128,20]}
+{"kind":"shape","slide":8,"id":"7","role":"header rule","bbox":[72,62,1136,2]}
+{"kind":"shape","slide":8,"id":"8","role":"title","bbox":[72,92,720,90]}
+{"kind":"textbox","slide":8,"id":"8","role":"title","text":"Стек проекта","textChars":12,"textLines":1,"bbox":[72,92,720,90]}
+{"kind":"shape","slide":8,"id":"9","role":"lead","bbox":[72,188,760,54]}
+{"kind":"textbox","slide":8,"id":"9","role":"lead","text":"Стек небольшой, но прагматичный под прототип и локальную разработку.","textChars":68,"textLines":1,"bbox":[72,188,760,54]}
+{"kind":"shape","slide":8,"id":"10","role":"list Frontend","bbox":[92,320,350,292]}
+{"kind":"shape","slide":8,"id":"11","role":"list accent Frontend","bbox":[92,320,350,8]}
+{"kind":"shape","slide":8,"id":"12","role":"list title Frontend","bbox":[116,344,302,26]}
+{"kind":"textbox","slide":8,"id":"12","role":"list title Frontend","text":"Frontend","textChars":8,"textLines":1,"bbox":[116,344,302,26]}
+{"kind":"shape","slide":8,"id":"13","role":"list body Frontend","bbox":[116,396,302,192]}
+{"kind":"textbox","slide":8,"id":"13","role":"list body Frontend","text":"• React 19\n• TypeScript\n• Vite\n• React Router 7\n• Axios\n• SCSS Modules","textChars":70,"textLines":6,"bbox":[116,396,302,192]}
+{"kind":"shape","slide":8,"id":"14","role":"list Backend","bbox":[466,320,350,292]}
+{"kind":"shape","slide":8,"id":"15","role":"list accent Backend","bbox":[466,320,350,8]}
+{"kind":"shape","slide":8,"id":"16","role":"list title Backend","bbox":[490,344,302,26]}
+{"kind":"textbox","slide":8,"id":"16","role":"list title Backend","text":"Backend","textChars":7,"textLines":1,"bbox":[490,344,302,26]}
+{"kind":"shape","slide":8,"id":"17","role":"list body Backend","bbox":[490,396,302,192]}
+{"kind":"textbox","slide":8,"id":"17","role":"list body Backend","text":"• FastAPI\n• SQLModel\n• Pydantic Settings\n• Uvicorn\n• Service/Repository pattern","textChars":79,"textLines":5,"bbox":[490,396,302,192]}
+{"kind":"shape","slide":8,"id":"18","role":"list Infra & Data","bbox":[840,320,350,292]}
+{"kind":"shape","slide":8,"id":"19","role":"list accent Infra & Data","bbox":[840,320,350,8]}
+{"kind":"shape","slide":8,"id":"20","role":"list title Infra & Data","bbox":[864,344,302,26]}
+{"kind":"textbox","slide":8,"id":"20","role":"list title Infra & Data","text":"Infra & Data","textChars":12,"textLines":1,"bbox":[864,344,302,26]}
+{"kind":"shape","slide":8,"id":"21","role":"list body Infra & Data","bbox":[864,396,302,192]}
+{"kind":"textbox","slide":8,"id":"21","role":"list body Infra & Data","text":"• SQLite\n• Docker\n• docker-compose\n• .env config\n• GigaChat API","textChars":63,"textLines":5,"bbox":[864,396,302,192]}
+{"kind":"shape","slide":9,"id":"2","role":"bg blob","bbox":[-120,-130,360,360]}
+{"kind":"shape","slide":9,"id":"3","role":"bg blob","bbox":[1080,520,260,260]}
+{"kind":"shape","slide":9,"id":"4","role":"bg blob","bbox":[930,-40,180,180]}
+{"kind":"shape","slide":9,"id":"5","role":"eyebrow","bbox":[72,36,180,20]}
+{"kind":"textbox","slide":9,"id":"5","role":"eyebrow","text":"08","textChars":2,"textLines":1,"bbox":[72,36,180,20]}
+{"kind":"shape","slide":9,"id":"6","role":"slide index","bbox":[1080,36,128,20]}
+{"kind":"textbox","slide":9,"id":"6","role":"slide index","text":"09 / 10","textChars":7,"textLines":1,"bbox":[1080,36,128,20]}
+{"kind":"shape","slide":9,"id":"7","role":"header rule","bbox":[72,62,1136,2]}
+{"kind":"shape","slide":9,"id":"8","role":"title","bbox":[72,92,720,90]}
+{"kind":"textbox","slide":9,"id":"8","role":"title","text":"Что важно улучшить","textChars":18,"textLines":1,"bbox":[72,92,720,90]}
+{"kind":"shape","slide":9,"id":"9","role":"lead","bbox":[72,188,760,54]}
+{"kind":"textbox","slide":9,"id":"9","role":"lead","text":"Следующий шаг уже не в базовом CRUD, а в зрелости продукта.","textChars":59,"textLines":1,"bbox":[72,188,760,54]}
+{"kind":"shape","slide":9,"id":"10","role":"card Пользователи и роли","bbox":[92,326,348,246]}
+{"kind":"shape","slide":9,"id":"11","role":"card accent Пользователи и роли","bbox":[92,326,10,246]}
+{"kind":"shape","slide":9,"id":"12","role":"card label Пользователи и роли","bbox":[118,350,302,24]}
+{"kind":"textbox","slide":9,"id":"12","role":"card label Пользователи и роли","text":"Пользователи и роли","textChars":19,"textLines":1,"bbox":[118,350,302,24]}
+{"kind":"shape","slide":9,"id":"13","role":"card body Пользователи и роли","bbox":[118,400,300,148]}
+{"kind":"textbox","slide":9,"id":"13","role":"card body Пользователи и роли","text":"Сейчас нет пользователей,\nролей, владения задачами и\nкомандного режима работы.","textChars":78,"textLines":3,"bbox":[118,400,300,148]}
+{"kind":"shape","slide":9,"id":"14","role":"card Надежность","bbox":[464,326,348,246]}
+{"kind":"shape","slide":9,"id":"15","role":"card accent Надежность","bbox":[464,326,10,246]}
+{"kind":"shape","slide":9,"id":"16","role":"card label Надежность","bbox":[490,350,302,24]}
+{"kind":"textbox","slide":9,"id":"16","role":"card label Надежность","text":"Надежность","textChars":10,"textLines":1,"bbox":[490,350,302,24]}
+{"kind":"shape","slide":9,"id":"17","role":"card body Надежность","bbox":[490,400,300,148]}
+{"kind":"textbox","slide":9,"id":"17","role":"card body Надежность","text":"Нужны тесты, CI, более\nстрогая обработка ошибок,\nлогирование и мониторинг\nAI-ошибок.","textChars":84,"textLines":4,"bbox":[490,400,300,148]}
+{"kind":"shape","slide":9,"id":"18","role":"card Глубина продукта","bbox":[836,326,348,246]}
+{"kind":"shape","slide":9,"id":"19","role":"card accent Глубина продукта","bbox":[836,326,10,246]}
+{"kind":"shape","slide":9,"id":"20","role":"card label Глубина продукта","bbox":[862,350,302,24]}
+{"kind":"textbox","slide":9,"id":"20","role":"card label Глубина продукта","text":"Глубина продукта","textChars":16,"textLines":1,"bbox":[862,350,302,24]}
+{"kind":"shape","slide":9,"id":"21","role":"card body Глубина продукта","bbox":[862,400,300,148]}
+{"kind":"textbox","slide":9,"id":"21","role":"card body Глубина продукта","text":"Не хватает создания задач из\nUI, уведомлений, массовых\nдействий и более глубокой\nаналитики.","textChars":91,"textLines":4,"bbox":[862,400,300,148]}
+{"kind":"shape","slide":10,"id":"2","role":"bg blob","bbox":[-120,-130,360,360]}
+{"kind":"shape","slide":10,"id":"3","role":"bg blob","bbox":[1080,520,260,260]}
+{"kind":"shape","slide":10,"id":"4","role":"bg blob","bbox":[930,-40,180,180]}
+{"kind":"shape","slide":10,"id":"5","role":"eyebrow","bbox":[72,36,180,20]}
+{"kind":"textbox","slide":10,"id":"5","role":"eyebrow","text":"09","textChars":2,"textLines":1,"bbox":[72,36,180,20]}
+{"kind":"shape","slide":10,"id":"6","role":"slide index","bbox":[1080,36,128,20]}
+{"kind":"textbox","slide":10,"id":"6","role":"slide index","text":"10 / 10","textChars":7,"textLines":1,"bbox":[1080,36,128,20]}
+{"kind":"shape","slide":10,"id":"7","role":"header rule","bbox":[72,62,1136,2]}
+{"kind":"shape","slide":10,"id":"8","role":"title","bbox":[72,92,720,90]}
+{"kind":"textbox","slide":10,"id":"8","role":"title","text":"Планы развития","textChars":14,"textLines":1,"bbox":[72,92,720,90]}
+{"kind":"shape","slide":10,"id":"9","role":"lead","bbox":[72,188,760,54]}
+{"kind":"textbox","slide":10,"id":"9","role":"lead","text":"Логичное развитие от прототипа к рабочему внутреннему инструменту.","textChars":66,"textLines":1,"bbox":[72,188,760,54]}
+{"kind":"shape","slide":10,"id":"10","role":"roadmap Сразу","bbox":[92,330,350,250]}
+{"kind":"shape","slide":10,"id":"11","role":"roadmap dot Сразу","bbox":[118,356,38,38]}
+{"kind":"shape","slide":10,"id":"12","role":"roadmap title Сразу","bbox":[174,364,120,18]}
+{"kind":"textbox","slide":10,"id":"12","role":"roadmap title Сразу","text":"Сразу","textChars":5,"textLines":1,"bbox":[174,364,120,18]}
+{"kind":"shape","slide":10,"id":"13","role":"roadmap body Сразу","bbox":[118,418,298,128]}
+{"kind":"textbox","slide":10,"id":"13","role":"roadmap body Сразу","text":"• авторизация\n• создание задачи из UI\n• лучшее разрешение неоднозначных задач","textChars":77,"textLines":3,"bbox":[118,418,298,128]}
+{"kind":"shape","slide":10,"id":"14","role":"roadmap Следом","bbox":[466,330,350,250]}
+{"kind":"shape","slide":10,"id":"15","role":"roadmap dot Следом","bbox":[492,356,38,38]}
+{"kind":"shape","slide":10,"id":"16","role":"roadmap title Следом","bbox":[548,364,120,18]}
+{"kind":"textbox","slide":10,"id":"16","role":"roadmap title Следом","text":"Следом","textChars":6,"textLines":1,"bbox":[548,364,120,18]}
+{"kind":"shape","slide":10,"id":"17","role":"roadmap body Следом","bbox":[492,418,298,128]}
+{"kind":"textbox","slide":10,"id":"17","role":"roadmap body Следом","text":"• уведомления\n• интеграции с календарем и мессенджерами\n• командные сценарии","textChars":76,"textLines":3,"bbox":[492,418,298,128]}
+{"kind":"shape","slide":10,"id":"18","role":"roadmap Дальше","bbox":[840,330,350,250]}
+{"kind":"shape","slide":10,"id":"19","role":"roadmap dot Дальше","bbox":[866,356,38,38]}
+{"kind":"shape","slide":10,"id":"20","role":"roadmap title Дальше","bbox":[922,364,120,18]}
+{"kind":"textbox","slide":10,"id":"20","role":"roadmap title Дальше","text":"Дальше","textChars":6,"textLines":1,"bbox":[922,364,120,18]}
+{"kind":"shape","slide":10,"id":"21","role":"roadmap body Дальше","bbox":[866,418,298,128]}
+{"kind":"textbox","slide":10,"id":"21","role":"roadmap body Дальше","text":"• аналитика по задачам\n• дашборды\n• несколько AI workflows поверх задач","textChars":71,"textLines":3,"bbox":[866,418,298,128]}
+{"kind":"shape","slide":10,"id":"22","role":"roadmap footer","bbox":[92,620,1096,36]}
+{"kind":"shape","slide":10,"id":"23","role":"roadmap footer text","bbox":[122,630,1030,14]}
+{"kind":"textbox","slide":10,"id":"23","role":"roadmap footer text","text":"Сейчас это сильный внутренний прототип: следующий прирост ценности дадут командный режим и надежный production-контур.","textChars":118,"textLines":1,"bbox":[122,630,1030,14]}

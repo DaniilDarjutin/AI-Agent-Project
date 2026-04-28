@@ -5,7 +5,7 @@ function AppLayout() {
   const location = useLocation()
 
   const isChatPage = location.pathname === '/chat'
-  const isTasksPage = location.pathname === '/tasks'
+  const isTasksPage = location.pathname.startsWith('/tasks')
 
   return (
     <div className={styles.page}>

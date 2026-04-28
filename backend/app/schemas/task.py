@@ -29,3 +29,13 @@ class TaskRead(SQLModel):
     due_date: Optional[date] = None
     created_at: datetime
     updated_at: datetime
+
+
+class TaskHistoryRead(SQLModel):
+    id: int
+    task_id: int
+    action_type: str
+    field_name: Optional[str] = None
+    old_value: Optional[str] = None
+    new_value: Optional[str] = None
+    changed_at: datetime

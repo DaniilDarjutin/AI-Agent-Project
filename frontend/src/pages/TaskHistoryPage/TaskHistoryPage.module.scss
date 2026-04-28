@@ -1,0 +1,168 @@
+.page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 70px 32px 45px;
+  gap: 24px;
+  overflow: auto;
+}
+
+.topBar,
+.summaryCard,
+.timeline,
+.info,
+.error {
+  width: min(100%, 1180px);
+}
+
+.topBar {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.backButton {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: rgba(255, 255, 255, 0.82);
+  color: #1f1f1f;
+  border-radius: 999px;
+  padding: 10px 18px;
+  font-family: "Roboto Mono", "Courier New", monospace;
+  font-size: 16px;
+  cursor: pointer;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.2s ease;
+}
+
+.backButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.summaryCard,
+.historyCard,
+.info,
+.error {
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+}
+
+.summaryCard {
+  padding: 28px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.summaryLabel {
+  font-family: "Roboto Mono", "Courier New", monospace;
+  font-size: 16px;
+  color: #4d4d4d;
+}
+
+.title {
+  font-family: "Roboto Mono", "Courier New", monospace;
+  font-size: 36px;
+  font-weight: 500;
+  color: #1f1f1f;
+}
+
+.metaRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-family: "Roboto Mono", "Courier New", monospace;
+  font-size: 16px;
+  color: #363636;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.historyCard {
+  padding: 24px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.historyHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.historyTitle {
+  font-family: "Roboto Mono", "Courier New", monospace;
+  font-size: 24px;
+  font-weight: 500;
+  color: #1f1f1f;
+}
+
+.historyTime {
+  font-family: "Roboto Mono", "Courier New", monospace;
+  font-size: 14px;
+  color: #656565;
+  white-space: nowrap;
+}
+
+.historyBody {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.historyText,
+.info,
+.error {
+  font-family: "Roboto Mono", "Courier New", monospace;
+  font-size: 18px;
+  color: #1f1f1f;
+}
+
+.info,
+.error {
+  padding: 22px 24px;
+}
+
+.error {
+  color: #962828;
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: 52px 16px 36px;
+    gap: 18px;
+  }
+
+  .summaryCard,
+  .historyCard {
+    padding: 20px;
+    border-radius: 22px;
+  }
+
+  .title {
+    font-size: 26px;
+  }
+
+  .historyHeader {
+    flex-direction: column;
+  }
+
+  .historyTitle {
+    font-size: 20px;
+  }
+
+  .historyText,
+  .info,
+  .error {
+    font-size: 16px;
+  }
+}
