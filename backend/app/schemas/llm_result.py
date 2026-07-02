@@ -13,6 +13,7 @@ class TaskChanges(SQLModel):
 class TaskEntities(SQLModel):
     task_id: Optional[int] = None
     title: Optional[str] = None
+    query: Optional[str] = None
     description: Optional[str] = None
     status: Optional[TaskStatus] = None
     priority: Optional[TaskPriority] = None

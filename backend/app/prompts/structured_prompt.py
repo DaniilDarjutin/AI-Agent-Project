@@ -60,12 +60,13 @@ def build_structured_prompt(current_date: str) -> str:
 5. Для get_task в entities допустимы только данные поиска:
    - task_id
    - title
-6. Для get_tasks в entities должны быть только null-поля.
+6. Для get_tasks в entities допустимо поле query, если пользователь просит показать задачи по теме, категории, области или содержимому.
 7. Для update_task и delete_task в entities должны быть только данные поиска:
    - task_id
    - title
 8. Не клади новые значения update в обычные поля entities.
 9. Для chitchat и unknown все поля entities должны быть null.
+10. Для get_tasks не используй title как тематический фильтр. Для этого используй query.
 
 Правила для changes:
 1. changes заполняй только при intent = update_task.
@@ -106,6 +107,7 @@ def build_structured_prompt(current_date: str) -> str:
 4. Если requires_confirmation = false, не добавляй фразу про подтверждение.
 5. Если ответ по истории диалога возможен, отвечай по существу.
 6. Если get_task использует контекстную задачу, можно писать reply вроде "Понял. Нужно показать последнюю обсуждаемую задачу."
+7. Если get_tasks использует query, можно писать reply вроде "Показываю задачи по теме «программирование»."
 
 Формат JSON строго такой:
 {{
@@ -116,6 +118,7 @@ def build_structured_prompt(current_date: str) -> str:
   "entities": {{
     "task_id": null,
     "title": "Купить молоко",
+    "query": null,
     "description": null,
     "status": null,
     "priority": null,
@@ -136,6 +139,7 @@ def build_structured_prompt(current_date: str) -> str:
   "entities": {{
     "task_id": null,
     "title": "Купить молоко",
+    "query": null,
     "description": null,
     "status": null,
     "priority": null,
@@ -154,6 +158,7 @@ def build_structured_prompt(current_date: str) -> str:
   "entities": {{
     "task_id": 5,
     "title": null,
+    "query": null,
     "description": null,
     "status": null,
     "priority": null,
@@ -178,6 +183,7 @@ def build_structured_prompt(current_date: str) -> str:
   "entities": {{
     "task_id": null,
     "title": "Купить сосиски",
+    "query": null,
     "description": null,
     "status": null,
     "priority": null,
@@ -196,6 +202,7 @@ def build_structured_prompt(current_date: str) -> str:
   "entities": {{
     "task_id": null,
     "title": null,
+    "query": null,
     "description": null,
     "status": null,
     "priority": null,
@@ -214,6 +221,26 @@ def build_structured_prompt(current_date: str) -> str:
   "entities": {{
     "task_id": null,
     "title": null,
+    "query": null,
+    "description": null,
+    "status": null,
+    "priority": null,
+    "due_date": null,
+    "changes": null
+  }}
+}}
+
+Сообщение: "Покажи задачи по программированию"
+Ответ:
+{{
+  "intent": "get_tasks",
+  "is_task_related": true,
+  "requires_confirmation": false,
+  "reply": "Показываю задачи по теме «программирование».",
+  "entities": {{
+    "task_id": null,
+    "title": null,
+    "query": "программирование",
     "description": null,
     "status": null,
     "priority": null,

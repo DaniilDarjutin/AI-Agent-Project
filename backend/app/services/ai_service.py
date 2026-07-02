@@ -20,6 +20,7 @@ from app.utils.exceptions import AmbiguousTaskMatchError
 
 class AIService:
     MAX_HISTORY_MESSAGES = 12
+    MAX_TASK_SEARCH_CANDIDATES = 100
 
     def __init__(self):
         self.action_service = ActionService()
@@ -238,6 +239,95 @@ class AIService:
         )
         return response
 
+    def _select_tasks_by_query_with_llm(self, session: Session, chat_id: str, query: str, tasks: list) -> list:
+        if not tasks:
+            return []
+
+        candidate_tasks = tasks[:self.MAX_TASK_SEARCH_CANDIDATES]
+        prompt = self._build_task_selection_prompt(query=query, tasks=candidate_tasks)
+
+        with GigaChat(
+            credentials=settings.gigachat_auth_key,
+            scope=settings.gigachat_scope,
+            model=settings.gigachat_model,
+            verify_ssl_certs=settings.gigachat_verify_ssl,
+        ) as giga:
+            token = session_id_cvar.set(f"{chat_id}:task-search")
+            try:
+                response = giga.chat(
+                    Chat(
+                        messages=[
+                            Messages(
+                                role="system",
+                                content=(
+                                    "Ты семантически отбираешь релевантные задачи. "
+                                    "Верни только JSON без пояснений."
+                                ),
+                            ),
+                            Messages(role="user", content=prompt),
+                        ]
+                    )
+                )
+            except Exception as e:
+                print("TASK SEARCH LLM ERROR:", repr(e))
+                return self.action_service.task_service.search_tasks_by_query(session, query)
+            finally:
+                session_id_cvar.reset(token)
+
+        raw_content = response.choices[0].message.content
+        print("TASK SEARCH RAW RESPONSE:", raw_content)
+
+        try:
+            parsed_data = self._parse_llm_json(raw_content)
+            relevant_ids = parsed_data.get("relevant_ids", [])
+
+            if not isinstance(relevant_ids, list):
+                return self.action_service.task_service.search_tasks_by_query(session, query)
+
+            normalized_ids = [
+                int(task_id)
+                for task_id in relevant_ids
+                if isinstance(task_id, int) or (isinstance(task_id, str) and task_id.isdigit())
+            ]
+
+            selected_by_id = {task.id: task for task in candidate_tasks}
+            selected_tasks = [
+                selected_by_id[task_id]
+                for task_id in normalized_ids
+                if task_id in selected_by_id
+            ]
+
+            if selected_tasks:
+                return selected_tasks
+        except (json.JSONDecodeError, ValueError, TypeError) as e:
+            print("TASK SEARCH PARSE ERROR:", repr(e))
+
+        return self.action_service.task_service.search_tasks_by_query(session, query)
+
+    def _build_task_selection_prompt(self, query: str, tasks: list) -> str:
+        serialized_tasks = [
+            {
+                "id": task.id,
+                "title": task.title,
+                "description": task.description,
+            }
+            for task in tasks
+        ]
+
+        tasks_json = json.dumps(serialized_tasks, ensure_ascii=False, indent=2)
+
+        return (
+            "Ниже список задач. Выбери id задач, которые по смыслу относятся "
+            f"к запросу пользователя: «{query}».\n\n"
+            "Смотри на смысл названия и описания, а не только на точное совпадение слов.\n"
+            "Например, абстрактные темы вроде «бытовая деятельность», «программирование», "
+            "«здоровье», «домашние дела» нужно понимать по смыслу.\n"
+            "Если релевантных задач нет, верни пустой массив.\n\n"
+            "Верни строго JSON такого вида:\n"
+            '{"relevant_ids": [1, 2, 3]}\n\n'
+            f"Список задач:\n{tasks_json}"
+        )
+
     def _build_action_response(
         self,
         session: Session,
@@ -246,7 +336,25 @@ class AIService:
         action_result,
     ) -> ChatResponse:
         if llm_result.intent == "get_tasks":
-            if not action_result:
+            tasks_to_show = list(action_result or [])
+
+            if llm_result.entities.query:
+                tasks_to_show = self._select_tasks_by_query_with_llm(
+                    session=session,
+                    chat_id=chat_id,
+                    query=llm_result.entities.query,
+                    tasks=tasks_to_show,
+                )
+
+            if not tasks_to_show:
+                if llm_result.entities.query:
+                    return ChatResponse(
+                        reply=f"Не нашёл задач по теме «{llm_result.entities.query}».",
+                        action=llm_result.intent,
+                        requires_confirmation=False,
+                        entities=llm_result.entities
+                    )
+
                 return ChatResponse(
                     reply="Список задач пуст.",
                     action=llm_result.intent,
@@ -256,11 +364,16 @@ class AIService:
 
             tasks_text = "\n\n".join(
                 self._format_task_short(task)
-                for task in action_result
+                for task in tasks_to_show
             )
 
+            if llm_result.entities.query:
+                intro = f"Вот задачи по теме «{llm_result.entities.query}»:"
+            else:
+                intro = "Вот актуальный список задач:"
+
             return ChatResponse(
-                reply=self._normalize_reply(f"Вот актуальный список задач:\n{tasks_text}"),
+                reply=self._normalize_reply(f"{intro}\n{tasks_text}"),
                 action=llm_result.intent,
                 requires_confirmation=False,
                 entities=llm_result.entities

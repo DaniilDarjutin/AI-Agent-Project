@@ -17,7 +17,7 @@ class ActionService:
             return self._create_task(session, entities)
 
         if action == "get_tasks":
-            return self._get_tasks(session)
+            return self._get_tasks(session, entities)
 
         if action == "get_task":
             return self._get_task(session, entities)
@@ -44,7 +44,7 @@ class ActionService:
 
         return self.task_service.create_task(session, task_data)
 
-    def _get_tasks(self, session: Session) -> Sequence[Task]:
+    def _get_tasks(self, session: Session, entities: TaskEntities) -> Sequence[Task]:
         return self.task_service.get_all_tasks(session)
 
     def _get_task(self, session: Session, entities: TaskEntities) -> Task | None:
